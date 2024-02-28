@@ -1,0 +1,142 @@
+form{
+    margin-left: 33%;
+}
+.Bici_add_container, .Bici_update_container {
+    padding: 20px;
+    width: 100%;
+    
+    .title {
+        text-align: center;
+        padding: 20px;
+        h1 {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+    .error {
+        color: red;
+        font-style: italic;
+    }
+    .Bici_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        div {
+            display: block;
+            width: 60%;
+            text-align: left;
+            .etiqueta {
+                display: inline-block;
+                width: 150px;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+            input {
+                border: 1px solid #008f88;
+                padding: 5px;
+                &:disabled {
+                    background-color: #dbd4d4;
+                }
+            }
+            select {
+                width: 195px;
+                padding: 5px;
+            }
+            span {
+                padding-top: 10px;
+            }
+        }
+        .buttons_box {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            margin-top: 20px;
+            button {
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .Bici_add_container, .Bici_update_container {
+        min-height: 83vh;
+        .title {
+            h1 {
+                font-size: 25px;
+            }
+        }
+        .Bici_form {
+            padding: 10px;
+            div {
+                padding: 10px;
+            }
+            .buttons_box {
+                padding: 10px;
+                button {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 577px) {
+
+    .Bici_add_container, .Bici_update_container {
+        min-height: 85vh;
+        .title {
+            h1 {
+                font-size: 30px;
+            }
+        }
+        .Bici_form {
+            padding: 20px;
+            div {
+                padding: 20px;
+            }
+            .buttons_box {
+                padding: 20px;
+                button {
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .Bici_add_container, .Bici_update_container {
+        min-height: 81vh;
+        .title {
+            h1 {
+                font-size: 35px;
+            }
+        }
+        .Bici_form {
+            padding: 30px;
+            div {
+                padding: 30px;
+            }
+            .buttons_box {
+                padding: 30px;
+                button {
+                    margin-right: 20px;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+}

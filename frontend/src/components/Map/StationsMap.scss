@@ -1,0 +1,22 @@
+.maps_content{
+    width: 100%;
+    height: 60vh;
+    .marker_button {
+        background-color: transparent;
+        border: none;
+    }
+    .popup {
+        width: 170px;
+        height: 160px;
+        text-align: center;
+       
+        h5 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        img {
+            width: 170px;
+            height: 113px;
+        }
+    }
+}
