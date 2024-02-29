@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'users.apps.UsersConfig',
     'rent.apps.RentConfig',
-    'incidents.apps.IncidentsConfig'
+    'incidents.apps.IncidentsConfig',
+    'billing.apps.BillingConfig'
 ]
 
 MIDDLEWARE = [
