@@ -5,7 +5,7 @@ const Axios = () => {
     let api = null;
     // console.log(JwtService.getToken());
     if (JwtService.getToken()) {
-        console.log(JwtService);
+        // console.log(JwtService);
         api = axios.create({
             // baseURL: 'http://localhost:8000',
             baseURL: secrets.URL_DRF,

@@ -31,11 +31,11 @@ const AuthService = {
     },
 
     getUserBici() {
-        return api().get('userScooter');
+        return api().get('userBici');
     },
 
     getUserStats(id) {
-        return api().get(`profile_stats/${id}`);
+        return api().get(`profile/${id}`);
     },
 
     deleteUser(uuid) {

@@ -19,7 +19,7 @@ export function AuthContextProvider({ children }) {
     // JwtService.destroyToken();
     // JwtService.destroyRefreshToken();
         if (token) {
-            console.log(token);
+            // console.log(token);
             AuthService.getUser()
                 .then(({ data, status }) => {
                     if (status === 200) {
@@ -30,7 +30,7 @@ export function AuthContextProvider({ children }) {
                     }
                 })
                 .catch(({ error }) => {
-                    console.log('hola refresh');
+                    // console.log('hola refresh');
                     if (JwtService.getRefreshToken()) {
                         refresh_token();
                     } else {
@@ -40,18 +40,18 @@ export function AuthContextProvider({ children }) {
         }
     }, [token]);
 
-    const refresh_token = async () => {
-        JwtService.destroyToken();
-        await AuthService.refreshToken()
-            .then(({ data }) => {
-                setToken(data.token);
-                JwtService.saveToken(data.token);
-                navigate('/rent');
-            })
-            .catch(({ }) => {
-                logout();
-            });
-    }
+    // const refresh_token = async () => {
+    //     JwtService.destroyToken();
+    //     await AuthService.refreshToken()
+    //         .then(({ data }) => {
+    //             setToken(data.token);
+    //             JwtService.saveToken(data.token);
+    //             navigate('/rent');
+    //         })
+    //         .catch(({ }) => {
+    //             logout();
+    //         });
+    // }
 
     const logout = useCallback(() => {
         JwtService.destroyToken();

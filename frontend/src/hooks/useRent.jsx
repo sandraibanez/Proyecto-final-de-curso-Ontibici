@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import RentService from "../services/RentService";
 
 export function useRent() {
-    console.log('holauserent');
+    // console.log('holauserent');
     const navigate = useNavigate();
     const [rents, setRents] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);

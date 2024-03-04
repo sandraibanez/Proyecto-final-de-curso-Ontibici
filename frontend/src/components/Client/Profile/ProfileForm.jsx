@@ -9,9 +9,9 @@ import { useParams } from "react-router-dom";
 import Notification from "../Notifications/Notification";
 import ListIncidencias from './listincidencias';
 import ListIncidenciasstation from './ListIncidenciasstation';
-
-const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, station }) => {
-    // console.log(incidents_slots);
+import Billing from './Billing';
+const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, station, billing }) => {
+    console.log(billing);
     const { id } = useParams();
     const [edit, setEdit] = useState(true);
     const { stats, useUserStats } = useAuth();
@@ -81,7 +81,25 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                     </div>
                 </div>
             </form>
-
+            <div className="billing">
+                <table className="slot_table" border="1">
+                    <thead className="thead_incidents_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Rent ID</th>
+                            <th>User ID</th>
+                            <th>Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody_incidents_list">
+                        {
+                            billing.map((billing, index) => (
+                                <Billing key={index} billing={billing} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
             <h3>Notifications</h3>
             {notifications_html}
 

@@ -6,14 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AuthContext from "../../../context/AuthContext";
 import { useRent } from "../../../hooks/useRent";
 import { useNavigate } from "react-router-dom";
+import {useBilling} from "../../../hooks/useBilling"
 Modal.setAppElement('#root');
 
 export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
-    console.log('hola');
+    // console.log('hola');
     const navigate = useNavigate();
     const { isAuth } = useContext(AuthContext);
     const { isCorrect, useRentBici, useBringBackBici } = useRent();
-
+    const {useAddBilling} = useBilling();
     let status_type = '';
 
     const customStyles = {
@@ -40,6 +41,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
                     useRentBici(rent);
                 } else {
                     useBringBackBici(rent);
+                    useAddBilling(rent.id);
                 }
             }
         } else {
