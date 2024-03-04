@@ -3,14 +3,18 @@ import Modal from 'react-modal';
 import './RentModal.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { useIncidents } from "../../../hooks/useIncidents";
+import { useParams } from "react-router-dom";
 import AuthContext from "../../../context/AuthContext";
+import { useAuth } from "../../../hooks/useAuth";
 import { useRent } from "../../../hooks/useRent";
 import { useNavigate } from "react-router-dom";
 import {useBilling} from "../../../hooks/useBilling"
 Modal.setAppElement('#root');
 
 export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
-    // console.log('hola');
+
+    const { id } = useParams();
+    const {  user } = useAuth(id);
     const navigate = useNavigate();
     const { isAuth } = useContext(AuthContext);
     const { isCorrect, useRentBici, useBringBackBici } = useRent();
@@ -51,13 +55,12 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
 
     useEffect(() => {
         if (isCorrect) {
-            navigate('/rent');
+            navigate('/profile/'+ user.id);
         }
     }, [isCorrect, navigate]);
 
     return (
         <div className="modal">
-            {/* <hi>hola</hi> */}
             <Modal className="rentModal" isOpen={openModalRent} onRequestClose={() => handleClose()} style={customStyles}>
                 <div className="rent_box">
                     <button className="modal_button" onClick={() => handleClose()}>
