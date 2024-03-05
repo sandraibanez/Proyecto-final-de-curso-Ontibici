@@ -5,12 +5,13 @@ import AuthContext from './AuthContext';
 const Context = React.createContext({})
 
 export function BillingContextProvider({ children }) {
+    // console.log('hola');
     const { isAdmin } = useContext(AuthContext);
     const [billing, setbilling] = useState([]);
 
     useEffect(function () {
         if (isAdmin) {
-            BillingService.getAllAdmin()
+            BillingService.getAllAdminBilling()
                 .then(({ data }) => {
                     setbilling(data);
                 })

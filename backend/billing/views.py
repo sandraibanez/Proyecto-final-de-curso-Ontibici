@@ -41,6 +41,10 @@ class BillingView(viewsets.GenericViewSet):
         billing = BillingSerializer.billing(context=serializer_context)
         return Response(BillingSerializer.to_billing(billing))
 
+    def getOneBilling(self, request, id):
+        billing = Billing.objects.get(id=id)
+        Billing_serializer = BillingSerializer(billing)
+        return Response(Billing_serializer.data)
 
 class BillingViewAdmin(viewsets.GenericViewSet):
 
@@ -67,9 +71,9 @@ class BillingViewAdmin(viewsets.GenericViewSet):
         context=serializer_context_user)
         username = serializer_user[2]
         if username == "admin":
-            station = Billing.objects.get(id=id)
+            billing = Billing.objects.get(id=id)
             data = request.data.get('billing')
-            serializer = BillingSerializer(instance=station, data=data, partial=True)
+            serializer = BillingSerializer(instance=billing, data=data, partial=True)
             if (serializer.is_valid(raise_exception=True)):
                 serializer.save()
         return Response(serializer.data)

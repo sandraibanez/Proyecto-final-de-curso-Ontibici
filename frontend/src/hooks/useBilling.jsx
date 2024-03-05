@@ -6,18 +6,27 @@ import AuthContext from "../context/AuthContext";
 export function useBilling() {
     const { isAuth } = useContext(AuthContext);
     const [userBilling, setUserBilling] = useState([]);
+    const [oneBilling, setOneBilling] = useState({});
     const {billing, setbilling} = useContext(BillingContext);
     const [isCorrect, setIsCorrect] = useState(false);
-
+    const useOneBilling = useCallback((id) => {
+        console.log(id);
+        BillingService.getOneBilling(id)
+            .then(({data}) => {
+                setOneBilling(data);
+                console.log(data);
+            })
+            .catch(e => console.error(e));
+    }, [oneBilling]);
     useEffect(function () {
         if (isAuth) {
             BillingService.getBilling()
                 .then(({ data }) => {
-                    setbilling(data);
+                    setUserBilling(data);
                     // console.log( data);
                 })
         }
-    }, [setbilling,isAuth])
+    }, [setUserBilling,isAuth])
 
     const useAddBilling = useCallback((data) => {
         console.log(data);
@@ -46,20 +55,21 @@ export function useBilling() {
                         if (remove_old !== -1) {
                             old_billing[remove_old] = data;
                             setbilling(old_billing);
-                            // toast.success('Slot incidence status updated');
                         }
                     }
                 })
                 .catch((e) => {
-                    toast.error(e.response.data[0]);
+                    // toast.error(e.response.data[0]);
                 });
         }
     }
 
     const useDeletebilling = (type, id) => {
+        // console.log(id);
         if (isAuth) {
             BillingService.deleteBilling(id)
                 .then(({ data, status }) => {
+
                     if (status === 200) {
                         // toast.success(data.data);
                         setbilling(billing.filter(billing => billing.id !== id));
@@ -70,5 +80,5 @@ export function useBilling() {
         }
     }
 
-    return { isCorrect,billing,setbilling,useAddBilling, useUpdateBilling,useDeletebilling,userBilling,setUserBilling};  
+    return { isCorrect,billing,setbilling,oneBilling,useOneBilling,setOneBilling,useAddBilling, useUpdateBilling,useDeletebilling,userBilling,setUserBilling};  
 }

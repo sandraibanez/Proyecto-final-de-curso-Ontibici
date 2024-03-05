@@ -12,6 +12,7 @@ const Dashboard = () => {
         rents: () => navigate('/dashboard/rents'),
         slot: () => navigate('/dashboard/slot'),
         icidents: () => navigate('/dashboard/incidents'),
+        billing: () => navigate('/dashboard/billing'),
     }
 
     return (
@@ -44,6 +45,9 @@ const Dashboard = () => {
             </div> 
             <div className="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <button className="button" onClick={() => redirects.icidents()}><span>Incidents List</span></button>
+            </div> 
+            <div className="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <button className="button" onClick={() => redirects.billing()}><span>Billing List</span></button>
             </div> 
             </div>
         </div>

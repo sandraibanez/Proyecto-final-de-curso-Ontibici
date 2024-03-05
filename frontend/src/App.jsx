@@ -59,6 +59,9 @@ const SlotList = React.lazy(() => import('./pages/Admin/slot/slotList'))
 const Slot_station = React.lazy(() => import('./pages/Admin/Slot/slot_station'))
 
 const IncidentsList = React.lazy(() => import('./pages/Admin/Incidence/IncidentsList'))
+
+const BillingList = React.lazy(() => import('./pages/Admin/Billing/BillingList'))
+const BillingUpdate = React.lazy(() => import('./pages/Admin/Billing/BillingUpdate'))
 function App() {
   useEffect(() => {
     AOS.init();
@@ -101,6 +104,8 @@ function App() {
                             <Route path="/dashboard/slot" element={<SlotList />} />
                             <Route path="/dashboard/dashboard/stations/slot/:slug" element={<Slot_station />} />
                             <Route path="/dashboard/incidents" element={<IncidentsList />} />
+                            <Route path="/dashboard/billing" element={<BillingList />} />
+                            <Route path="/dashboard/billing/update/:id" element={<BillingUpdate />} />
                           </Route>
                         </Routes>
                         <Footer />

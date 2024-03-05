@@ -2,15 +2,21 @@ import api from "./api"
 
 const BillingService = {
     // admin
-    getAllAdmin() {
+    getAllAdminBilling() {
+        console.log('hola');
         return api().get("/billingall");
     },
-
+    getOneBilling(id) {
+        console.log(id);
+        return api().get(`billing/${id}`);
+    },
     updateBilling(id, data) {
-        return api().put(`billing/${id}`,{'billing':data});
+        console.log(data);
+        return api().put(`billing_update/${id}`,{'billing':data});
     },
 
     deleteBilling(id) {
+        console.log(id);
         return api().delete(`billingdelete/${id}`);
     },
 

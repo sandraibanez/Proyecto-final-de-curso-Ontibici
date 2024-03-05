@@ -12,7 +12,7 @@ const Profile = () => {
     const navigate = useNavigate();
     const { incidentsSlotsUser } = useIncidents();
     const { incidentsStationsUser } = useIncidents();
-    const { billing } = useBilling();
+    const { userBilling } = useBilling();
     // console.log(incidentsSlotsUser);
     useEffect(() => {
         useProfile(id);
@@ -35,7 +35,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className='ProfileForm'>
-                <ProfileForm incidents_slots={incidentsSlotsUser} station={incidentsStationsUser} user={user} profile={profile} errorMSG={errorMSG} billing={billing}/>
+                <ProfileForm incidents_slots={incidentsSlotsUser} station={incidentsStationsUser} user={user} profile={profile} errorMSG={errorMSG} billing={userBilling}/>
             </div>
         </div>
     )

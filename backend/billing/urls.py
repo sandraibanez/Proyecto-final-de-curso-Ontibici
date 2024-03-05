@@ -6,7 +6,8 @@ urlpatterns = [
     # admin
     path('billing', BillingView.as_view({"get": "getBilling"})),
     path('billingall', BillingViewAdmin.as_view({"get": "getAllbilling"})),
-    path('billing/<str:id>', BillingViewAdmin.as_view({"put": "updateBilling"})),
+    path('billing/<str:id>', BillingView.as_view({'get': 'getOneBilling'})),
+    path('billing_update/<str:id>', BillingViewAdmin.as_view({"put": "updateBilling"})),
     path('billingdelete/<str:id>', BillingViewAdmin.as_view({"delete": "deleteBilling"})),
     # USER BILLING
     # user
