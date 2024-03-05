@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import './BillingCardAdmin.scss';
 
 export default function BillingCardAdmin ({ billing, index, deletebilling }) {
-    console.log(billing.id);
+    // console.log(billing.id);
     const navigate = useNavigate();
 
     const redirects = {

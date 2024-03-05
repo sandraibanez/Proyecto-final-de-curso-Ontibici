@@ -6,6 +6,10 @@ const BillingService = {
         console.log('hola');
         return api().get("/billingall");
     },
+    payadmin(value){
+        console.log(value);
+        return api().post("billing_pay",{'billing_pay':value});
+    },
     getOneBilling(id) {
         console.log(id);
         return api().get(`billing/${id}`);
@@ -22,12 +26,16 @@ const BillingService = {
 
     // user
     createBilling(data) {
-        let var1 = {
+        const pay_value = localStorage.getItem('pay');
+        const pay_id = JSON.parse(pay_value);
+        // const var1 = data.pay;
+        // const var2 = {...data}
+        // console.log(var1,data.id,data);
+        let value = {
             rent_id: data,
-            pay: 20
+            pay: pay_id
         }
-        console.log({ "billing_create":var1 });
-        return api().post("/billing_create", { 'billing_create':var1});
+        return api().post("/billing_create", { 'billing_create':value});
     },
 
    

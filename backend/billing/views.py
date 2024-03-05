@@ -21,7 +21,25 @@ class BillingView(viewsets.GenericViewSet):
         billing = Billing.objects.filter(user_id=user.id)
         billing_serializer = BillingSerializer(billing, many=True)
         return Response(billing_serializer.data)
+   
+    def BillingPay(self, request):
+        bearer = request.headers['Authorization'].split()
+        serializer_context_user = {
+            'token': bearer[1]
+        }
+        serializer_user = BillingSerializer.usertoken(
+        context=serializer_context_user)
+        username = serializer_user[2]
+        if username == "admin":
+            data = request.data['billing_pay']
+ 
+            serializer_context = {
+                'pay': data['pay']
+            }
 
+        pay = BillingSerializer.pay(context=serializer_context)
+        return Response({"pay":pay})
+   
     def postbilling(self, request):
         bearer = request.headers['Authorization'].split()
         serializer_context_user = {
@@ -31,10 +49,9 @@ class BillingView(viewsets.GenericViewSet):
         context=serializer_context_user)
         username = serializer_user[0]
         data = request.data['billing_create']
-
         serializer_context = {
             'username': username,
-            'pay': data['pay'],
+            'pay':data['pay'],
             'rent_id': data['rent_id']
         }
 
@@ -45,7 +62,8 @@ class BillingView(viewsets.GenericViewSet):
         billing = Billing.objects.get(id=id)
         Billing_serializer = BillingSerializer(billing)
         return Response(Billing_serializer.data)
-
+    
+   
 class BillingViewAdmin(viewsets.GenericViewSet):
 
     def getAllbilling(self, request):
@@ -77,6 +95,7 @@ class BillingViewAdmin(viewsets.GenericViewSet):
             if (serializer.is_valid(raise_exception=True)):
                 serializer.save()
         return Response(serializer.data)
+   
     
   
     def deleteBilling(self, request, id):

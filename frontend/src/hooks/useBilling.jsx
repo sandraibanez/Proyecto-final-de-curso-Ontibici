@@ -9,6 +9,8 @@ export function useBilling() {
     const [oneBilling, setOneBilling] = useState({});
     const {billing, setbilling} = useContext(BillingContext);
     const [isCorrect, setIsCorrect] = useState(false);
+    
+  
     const useOneBilling = useCallback((id) => {
         console.log(id);
         BillingService.getOneBilling(id)
@@ -36,6 +38,7 @@ export function useBilling() {
                     console.log(data);
                     if (status === 200) {
                         setUserBilling([...userBilling, data]);
+                        // setPay(newPay);
                         console.log(data);
                         setIsCorrect(true);
                         setTimeout(() => { setIsCorrect(false); }, 1000);
@@ -80,5 +83,7 @@ export function useBilling() {
         }
     }
 
+    
+   
     return { isCorrect,billing,setbilling,oneBilling,useOneBilling,setOneBilling,useAddBilling, useUpdateBilling,useDeletebilling,userBilling,setUserBilling};  
 }

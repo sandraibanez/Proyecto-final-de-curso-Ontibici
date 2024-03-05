@@ -1,8 +1,25 @@
-import React from 'react';
-// import './BillingListAdmin.scss';
+
+import React, { useEffect, useRef } from 'react';
 import BillingCardAdmin from './BillingCardAdmin';
-export default function BillingListAdmin({ billing, deletebilling }) {
-    console.log(billing.id);
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+
+export default function BillingListAdmin({ billing = [], deletebilling }) {
+
+    const validators = Yup.object().shape({
+        pay: Yup.string().required('*Pay is required'),
+    });
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: yupResolver(validators) });
+    const payRef = useRef('');
+    const send_data = (data) => {
+        console.log(data);
+        localStorage.setItem('pay', data.pay);
+        
+    };
+    const valor = localStorage.getItem('pay');
+    
     return (
         <div className="incidents_list_container">
             <div className="incidents_list d-flex align-items-center">
@@ -14,6 +31,9 @@ export default function BillingListAdmin({ billing, deletebilling }) {
                     </div>
                 </div>
             </div>
+            
+            <br/>
+            <h1>Current value of Pay: {valor}</h1>
             <table className="slot_table" border="1">
                 <thead className="thead_billing_list">
                     <tr>
@@ -32,6 +52,14 @@ export default function BillingListAdmin({ billing, deletebilling }) {
                     }
                 </tbody>
             </table>
+            <form className='billing_form' onSubmit={handleSubmit(send_data)}>
+                <div className='img_box'>
+                    <label htmlFor='pay' className='etiqueta'>New pay value:</label>
+                    <input id='pay' name="pay" type="text" {...register('pay')} /><br />
+                    <span className="error">{errors.pay?.message}</span>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     )
 }

@@ -25,12 +25,21 @@ class BillingSerializer(serializers.ModelSerializer):
             "rent_id": instance.rent_id,
         })
 
+    def pay(context):
+        print (context)
+        pay = context['pay']
+        # billing = Billing.objects.update(pay=pay)
+
+        # pay.save()
+        return pay
+
     def billing(context):
         print (context)
         username = context['username']
         rent_id = context['rent_id']
-        pay = context ['pay']
-
+        pay = context['pay']
+        # pay_context = {'pay': context['pay']}
+        # pay = BillingSerializer.pay(pay_context)
         user = User.objects.get(username=username)
         if user is None:
             raise serializers.ValidationError('User not found')

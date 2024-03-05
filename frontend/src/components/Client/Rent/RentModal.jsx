@@ -12,7 +12,7 @@ import {useBilling} from "../../../hooks/useBilling"
 Modal.setAppElement('#root');
 
 export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
-
+  
     const { id } = useParams();
     const {  user } = useAuth(id);
     const navigate = useNavigate();
@@ -46,6 +46,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
                 } else {
                     useBringBackBici(rent);
                     useAddBilling(rent.id);
+                  
                 }
             }
         } else {
