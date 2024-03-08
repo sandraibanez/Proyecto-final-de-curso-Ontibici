@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
 from django.conf import settings
 from datetime import datetime, timedelta
-import jwt
-
+import jwt 
+ 
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password):
         user = self.model(email=self.normalize_email(email), username=username)

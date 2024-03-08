@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-a+7*b$58iyf(-zout7-8&0oz&6(gzvzy((h$rl9hd4u%1vyn^g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ["0.0.0.0",'localhost',"postgres_container"]
 
+ENVIRORMENT = POSTGRES_HOST_AUTH_METHOD =True
 
 # Application definition
 
@@ -60,7 +61,8 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'http://localhost:3000'
  ]
 
 ROOT_URLCONF = 'urls'
@@ -81,21 +83,31 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ontibici',  
-        'USER':'postgres',  
-        'PASSWORD':'sandra2001',  
-        'HOST':'localhost',  
-        'PORT':'5433',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ontibici',  
+#         'USER':'postgres',  
+#         'PASSWORD':'sandra2001',  
+#         'HOST':'localhost',  
+#         'PORT':'5433',
            
+#     }
+# }
+DATABASES = { 
+    'default': {
+        'ENGINE': os.environ.get('DB_DRIVER'),
+        'USER': os.environ.get('PG_USER'),
+        'PASSWORD':os.environ.get('PG_PASSWORD'),
+        'NAME': os.environ.get('PG_DB'),
+        'PORT': os.environ.get('PG_PORT'),
+        'HOST': os.environ.get('PG_HOST') 
     }
 }
 
@@ -136,7 +148,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -150,3 +162,5 @@ REST_FRAMEWORK = {
         'users.backends.JWTAuthentication',
     )
 }
+STATIC_URL = '/api/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'api/static')

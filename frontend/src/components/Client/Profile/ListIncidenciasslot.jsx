@@ -1,7 +1,7 @@
 import React from 'react';
 // import './ListIncidencias.scss';
 
-export default function ListIncidencias ({ incidence }) {
+export default function ListIncidenciasslot ({ incidence }) {
     // console.log(incidence);
     return  (
         <tr>

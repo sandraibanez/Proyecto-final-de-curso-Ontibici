@@ -7,7 +7,8 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useNotifications } from "../../../hooks/useNotifications";
 import { useParams } from "react-router-dom";
 import Notification from "../Notifications/Notification";
-import ListIncidencias from './listincidencias';
+// import ListIncidencias from './Listincidencias';
+import ListIncidenciasslot from './ListIncidenciasslot';
 import ListIncidenciasstation from './ListIncidenciasstation';
 import Billing from './Billing';
 const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, station, billing }) => {
@@ -119,7 +120,7 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                     <tbody className="tbody_incidents_list">
                         {
                             incidents_slots.map((incidence, index) => (
-                                <ListIncidencias key={index} incidence={incidence} type={"slot"} />
+                                <ListIncidenciasslot key={index} incidence={incidence} type={"slot"} />
                             ))
                         }
                     </tbody>

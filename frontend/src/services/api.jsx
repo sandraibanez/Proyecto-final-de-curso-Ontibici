@@ -7,8 +7,8 @@ const Axios = () => {
     if (JwtService.getToken()) {
         // console.log(JwtService);
         api = axios.create({
-            // baseURL: 'http://localhost:8000',
-            baseURL: secrets.URL_DRF,
+            baseURL: 'http://localhost:8000/api/',
+            // baseURL: secrets.URL_DRF,
             headers: {
                 "Content-type": "application/json",  
                 "Authorization": `Bearer ${JwtService.getToken()}`

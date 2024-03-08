@@ -49,8 +49,18 @@ class BillingSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('Rent not found')
         fecha_inicio = rent.initial_date
         fecha_fin = rent.end_date
+        if fecha_fin and fecha_inicio:
+            duracion_alquiler = fecha_fin - fecha_inicio
+        # Resto de tu lógica aquí
+        else:
+        # Manejo del caso en que uno o ambos valores son None
+        # Puedes asignar un valor predeterminado o lanzar una excepción, según tu necesidad.
+            duracion_alquiler = 5
+            pass
+        
+        print (fecha_fin, fecha_inicio)
         tarifa_por_hora = pay
-        duracion_alquiler = fecha_fin - fecha_inicio
+        # duracion_alquiler = fecha_fin - fecha_inicio
         precio_total = duracion_alquiler.total_seconds() / 3600 * tarifa_por_hora
         print (precio_total)
         billing = Billing.objects.create(pay=pay, user_id=user.id, rent_id=rent.id)

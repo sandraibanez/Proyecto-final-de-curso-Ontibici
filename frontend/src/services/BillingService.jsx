@@ -30,11 +30,11 @@ const BillingService = {
         const pay_id = JSON.parse(pay_value);
         // const var1 = data.pay;
         // const var2 = {...data}
-        // console.log(var1,data.id,data);
         let value = {
             rent_id: data,
             pay: pay_id
         }
+         console.log(value);
         return api().post("/billing_create", { 'billing_create':value});
     },
 
