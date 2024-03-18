@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './App.scss'
 
 // librerias para la plantilla
@@ -11,7 +11,7 @@ import './assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import './assets/vendor/fontawesome-free/css/all.min.css';
 import './assets/vendor/glightbox/css/glightbox.min.css';
 import './assets/vendor/swiper/swiper-bundle.min.css';
-// import './assets/vendor/aos/aos.css';
+import './assets/vendor/aos/aos.css';
 
 // fontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -63,9 +63,9 @@ const IncidentsList = React.lazy(() => import('./pages/Admin/Incidence/Incidents
 const BillingList = React.lazy(() => import('./pages/Admin/Billing/BillingList'))
 const BillingUpdate = React.lazy(() => import('./pages/Admin/Billing/BillingUpdate'))
 function App() {
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="App">
       <Suspense fallback={<SpinnerLoading />}>

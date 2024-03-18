@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-// import './BillingCardAdmin.scss';
+import './BillingCardAdmin.scss';
 
 export default function BillingCardAdmin ({ billing, index, deletebilling }) {
     // console.log(billing.id);
@@ -18,7 +18,8 @@ export default function BillingCardAdmin ({ billing, index, deletebilling }) {
             <td>{billing.pay}</td>
             <td> 
                 <button className="buttons" onClick={() => redirects.update(billing.id)}>Edit</button>
-                {/* <button className="button_delete" onClick={() => deletebilling(billing.id)}>Delete</button> */}
+                {/* <button className="buttons" onClick={() => deletebilling(billing.id)}>Delete</button> */}
+                
             </td>
         </tr>
     )

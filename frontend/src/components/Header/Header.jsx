@@ -3,7 +3,7 @@ import './Header.css';
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext"; 
 import { useNotifications } from "../../hooks/useNotifications";
-
+import stationimg from '../../assets/img/Logo.jpg'; 
 export default function Header () {
     const navigate = useNavigate();
     const { user, isAuth, isAdmin, logout } = useContext(AuthContext);
@@ -39,7 +39,9 @@ export default function Header () {
         <header id="header" className="header d-flex align-items-center fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
                 <a className="logo d-flex align-items-center" onClick={() => redirects.rent()}>
-                    <img src="/assets/Logo.png" alt="logo"/>
+                    {/* <img src="/assets/Logo.jpg" alt="logo"/> */}
+                    <img src={stationimg} alt="logo" />
+                    {/* <h1> Ontibici</h1> */}
                 </a>
                 <nav id="navbar" className="navbar">
                     <ul className="header-container container-fluid">

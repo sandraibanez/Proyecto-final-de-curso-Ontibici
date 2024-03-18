@@ -1,0 +1,22 @@
+.id_col {
+    font-weight: bold;
+}
+
+.buttons {
+    display: block;
+    width: 90px;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 3%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid #333;
+    border-radius: 10px; 
+    background-color: #0e1d34ea;
+    color: white;
+    &:hover{
+        background-color: #0e1d34c0;
+    }
+}

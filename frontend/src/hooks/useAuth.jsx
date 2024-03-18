@@ -30,7 +30,7 @@ export function useAuth() {
                 console.log(data);
                 if (status == 200) {
                     JwtService.saveToken(data.token);
-                    JwtService.saveRefreshToken(data.ref_token);
+                    // JwtService.saveRefreshToken(data.ref_token);
                     setToken(data.token);
                     setUser(data.user);
                     setIsAuth(true);

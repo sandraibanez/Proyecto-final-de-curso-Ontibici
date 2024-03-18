@@ -11,20 +11,22 @@ export default function StationsCardAdmin ({ station, index, deleteStation }) {
     }
 
     return (
+        
+            <tr className="col-lg-12 col-md-6" data-aos="fade" data-aos-delay="400">
+                <td className="id_col">{station.id}</td>
+                <td>{station.slug}</td>
+                <td>{station.name}</td>
+                <td>{station.img}</td>
+                <td>{station.location}</td>
+                <td>{station.latitud}</td>
+                <td>{station.long}</td>
+                <td> 
+                    <button className="buttons" onClick={() => redirects.update(station.slug)}>Edit</button>
+                    <button className="buttons" onClick={() => deleteStation(station.slug)}>Delete</button>
+                </td>
+            </tr>
      
-        <tr>
-            <td className="id_col">{station.id}</td>
-            <td>{station.slug}</td>
-            <td>{station.name}</td>
-            <td>{station.img}</td>
-            <td>{station.location}</td>
-            <td>{station.latitud}</td>
-            <td>{station.long}</td>
-            <td> 
-                <button className="buttons" onClick={() => redirects.update(station.slug)}>Edit</button>
-                <button className="buttons" onClick={() => deleteStation(station.slug)}>Delete</button>
-            </td>
-        </tr>
+        
     
     )
 }

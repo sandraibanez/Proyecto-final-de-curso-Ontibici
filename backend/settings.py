@@ -89,27 +89,27 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ontibici',  
-#         'USER':'postgres',  
-#         'PASSWORD':'sandra2001',  
-#         'HOST':'localhost',  
-#         'PORT':'5433',
-           
-#     }
-# }
-DATABASES = { 
+DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_DRIVER'),
-        'USER': os.environ.get('PG_USER'),
-        'PASSWORD':os.environ.get('PG_PASSWORD'),
-        'NAME': os.environ.get('PG_DB'),
-        'PORT': os.environ.get('PG_PORT'),
-        'HOST': os.environ.get('PG_HOST') 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ontibici',  
+        'USER':'postgres',  
+        'PASSWORD':'sandra2001',  
+        'HOST':'localhost',  
+        'PORT':'5433',
+           
     }
 }
+# DATABASES = { 
+#     'default': {
+#         'ENGINE': os.environ.get('DB_DRIVER'),
+#         'USER': os.environ.get('PG_USER'),
+#         'PASSWORD':os.environ.get('PG_PASSWORD'),
+#         'NAME': os.environ.get('PG_DB'),
+#         'PORT': os.environ.get('PG_PORT'),
+#         'HOST': os.environ.get('PG_HOST') 
+#     }
+# }
 
 
 # Password validation

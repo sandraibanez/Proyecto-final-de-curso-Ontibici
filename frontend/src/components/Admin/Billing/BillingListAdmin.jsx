@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import './BillingListAdmin.scss';
 import BillingCardAdmin from './BillingCardAdmin';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -21,8 +22,8 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
     const valor = localStorage.getItem('pay');
     
     return (
-        <div className="incidents_list_container">
-            <div className="incidents_list d-flex align-items-center">
+        <div className="billing_list_container">
+            <div className="billing_list d-flex align-items-center">
                 <div className="container">
                     <div className="row gy-4 d-flex justify-content-between">
                         <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -34,7 +35,7 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
             
             <br/>
             <h1>Current value of Pay: {valor}</h1>
-            <table className="slot_table" border="1">
+            <table className="table" border="1">
                 <thead className="thead_billing_list">
                     <tr>
                         <th>ID</th>

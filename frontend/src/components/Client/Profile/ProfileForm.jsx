@@ -57,7 +57,51 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
     const notifications_html = notifications.length > 0 ?
         notifications.map(item => <Notification notification={item} key={item.id} />)
         : <p>No Notifications</p>;
+    const Incidents_slot = incidents_slots.length > 0 ?
+        <div className="incidents_list_container_slot">
+            <table className="slot_table" border="1">
+                <thead className="thead_incidents_list">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Slot ID</th>
+                    </tr>
+                </thead>
+                <tbody className="tbody_incidents_list">
+                    {
+                        incidents_slots.map((incidence, index) => (
+                            <ListIncidenciasslot key={index} incidence={incidence} type={"slot"} />
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+        : <p>There are no slot incidents</p>
 
+    const Incidents_station = station.length > 0 ?
+    <div className="incidents_list_container_station">
+    <table className="station_table" border="1">
+        <thead className="thead_incidents_list">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Station ID</th>
+            </tr>
+        </thead>
+        <tbody className="tbody_incidents_list">
+            {
+                station.map((station, index) => (
+                    <ListIncidenciasstation key={index} station={station} type={"slot"} />
+                ))
+            }
+        </tbody>
+    </table>
+    </div>
+    : <p>There are no station incidents</p>
 
     return (
         <div className='profile_page'>
@@ -69,21 +113,25 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                     </div>
                     <div className='profile_user'>
                         <div className='attribute_box'>
-                            <label htmlFor="username" className='etiqueta'>Username:</label>
-                            <input type="text" id="username" {...register('username')} disabled={edit} /><br />
-                            <span className="error">{errors.username?.message}</span>
+                            {/* <div className="etiqueta">
+                                 <label htmlFor="username" >Username:</label>
+                            </div> */}
+                           
+                            <p type="text" id="username">{user.username}</p>
+                            
                         </div>
                         <div className='attribute_box'>
-                            <label htmlFor="email" className='etiqueta'>Email:</label>
-                            <input type="text" id="email" {...register('email')} disabled={edit} /><br />
-                            <span className="error">{errors.email?.message}</span>
+                            {/* <label htmlFor="email" className='etiqueta'>Email:</label> */}
+                            <p type="text" id="email">{user.email}</p>
+                            
                         </div>
                         <div className="error_server">{errorMSG}</div>
                     </div>
                 </div>
             </form>
+            <h1>Billing</h1>
             <div className="billing">
-                <table className="slot_table" border="1">
+                <table className="billing_table" border="1">
                     <thead className="thead_incidents_list">
                         <tr>
                             <th>ID</th>
@@ -104,9 +152,10 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
             <h3>Notifications</h3>
             {notifications_html}
 
-            <h3>Incidencias</h3>
+            <h3>Incidents</h3>
             <h2>Slot</h2>
-            <div className="incidents_list_container_slot">
+            {Incidents_slot}
+            {/* <div className="incidents_list_container_slot">
                 <table className="slot_table" border="1">
                     <thead className="thead_incidents_list">
                         <tr>
@@ -125,28 +174,9 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                         }
                     </tbody>
                 </table>
-            </div>
+            </div> */}
             <h2>Station</h2>
-            <div className="incidents_list_container_station">
-                <table className="slot_table" border="1">
-                    <thead className="thead_incidents_list">
-                        <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Status</th>
-                            <th>Description</th>
-                            <th>Station ID</th>
-                        </tr>
-                    </thead>
-                    <tbody className="tbody_incidents_list">
-                        {
-                            station.map((station, index) => (
-                                <ListIncidenciasstation key={index} station={station} type={"slot"} />
-                            ))
-                        }
-                    </tbody>
-                </table>
-            </div>
+            {Incidents_station}
         </div>
     )
 }

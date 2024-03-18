@@ -18,9 +18,9 @@ const AuthService = {
         return api().get('user');
     },
 
-    refreshToken() {
-        return api().get('refresh_token');
-    },
+    // refreshToken() {
+    //     return api().get('refresh_token');
+    // },
 
     getProfile(id) {
         return api().get(`profile/${id}`);

@@ -24,6 +24,10 @@ const BillingService = {
         return api().delete(`billingdelete/${id}`);
     },
 
+    // deleteStation(slug) {
+    //     return api().delete(`stations/${slug}`);
+    // },
+
     // user
     createBilling(data) {
         const pay_value = localStorage.getItem('pay');

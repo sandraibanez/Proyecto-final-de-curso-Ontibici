@@ -1,6 +1,9 @@
 .profile_container {
     padding: 20px;
     width: 100%;
+    h1{
+        margin-top:5% ;
+    }
     h3 {
         font-size: 24px;
         font-weight: bold;
@@ -22,6 +25,7 @@
     }
     p{
         text-align: center;
+        color: black;
     }
     .title {
         text-align: center;
@@ -44,9 +48,9 @@
     
     .profile {
         margin-top: 6%;
-        display: grid;
-        width: 80%;
-        margin-left: 10%;
+        // display: grid;
+        width: 40%;
+        margin-left: 30%;
         text-align: center;
         padding: 20px;
         background-color: #f2f2f2;
@@ -56,6 +60,7 @@
     
     .profile_image {
         margin-bottom: 20px;
+        margin-right: 60% ;
     }
     
     .user_image {
@@ -63,59 +68,26 @@
         height: 150px;
         border-radius: 50%;
         overflow: hidden;
-        border: 4px solid #008f88;
+        border: 4px solid #0e1d34a0;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     }
     
-    .profile_user,
-    .profile_bio {
-        margin-bottom: 20px;
+    .profile_user{
+        display: flex;
+        flex-direction: column;
     }
     
-    .attribute_box {
-        margin-bottom: 10px;
-    }
+    // .attribute_box {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
     
     .etiqueta {
         font-weight: bold;
         text-transform: uppercase;
         color: #333;
     }
-    
-    input[type="text"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    
-    .buttons_box {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .cancel,
-    .edit,
-    .confirm {
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 10px 20px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #008f88;
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    
-    .cancel:hover,
-    .edit:hover,
-    .confirm:hover {
-        background-color: #005953;
-    }
+  
              
 }
 
@@ -155,7 +127,7 @@
                     .etiqueta {
                         display: block;
                         padding-bottom: 10px;
-                        margin: auto;
+                        // margin: auto;
                     }
                     input {
                         text-align: center;
@@ -163,25 +135,25 @@
                     }
                 }
             }
-            .profile_bio {
-                grid-row-start: 3;
-                grid-row-end: 4;
-                padding: 5px;
-                .attribute_box {
-                    display: block;
-                    padding: 15px;
-                    .etiqueta {
-                        display: block;
-                        margin: auto;
-                        padding-bottom: 10px;
-                    }
-                    textarea {
-                        display: block;
-                        margin: auto;
-                        width: 250px;
-                    }
-                }
-            }
+            // .profile_bio {
+            //     grid-row-start: 3;
+            //     grid-row-end: 4;
+            //     padding: 5px;
+            //     .attribute_box {
+            //         display: block;
+            //         padding: 15px;
+            //         .etiqueta {
+            //             display: block;
+            //             // margin: auto;
+            //             padding-bottom: 10px;
+            //         }
+            //         textarea {
+            //             display: block;
+            //             margin: auto;
+            //             width: 250px;
+            //         }
+            //     }
+            // }
             .buttons_box {
                 grid-row-start: 4;
                 grid-row-end: 5;
@@ -406,7 +378,6 @@
 
 .incidents_list_container_slot, .incidents_list_container_station {
     padding: 20px;
-    min-height: 77vh;
     overflow-x: auto;
 
     h3 {
@@ -449,7 +420,7 @@
         border-collapse: collapse;
 
         .thead_incidents_list {
-            background-color: #66D7D1;
+            background-color: #0e1d34a0;
             text-transform: uppercase;
             font-weight: bold;
             color: #fff;
@@ -465,6 +436,75 @@
             vertical-align: middle;
         }
     }
+    .station_table {
+        background-color: #EAF2E3;
+        width: 80%;
+        margin: auto;
+        border: 2px solid #333;
+        border-collapse: collapse;
+
+        .thead_incidents_list {
+            background-color: #0e1d34a0;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        th, td {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+    }
+    
 }
 
 
+.billing {
+    padding: 20px;
+    min-height: 77vh;
+    overflow-x: auto;
+
+    h3 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    
+
+    .billing_table {
+        background-color: #EAF2E3;
+        width: 80%;
+        margin: auto;
+        border: 2px solid #333;
+        border-collapse: collapse;
+
+        .thead_incidents_list {
+            background-color: #0e1d34a0;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        th, td {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+    }
+   
+    
+}

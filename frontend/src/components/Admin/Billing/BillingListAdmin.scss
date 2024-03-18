@@ -1,107 +1,51 @@
-.dashboard_container {
-    width: 100%;
-    .title {
+.billing_list_container {
+    // padding: 20px;
+    min-height: 77vh;
+    overflow-x: auto;
+    h1 {
         text-align: center;
-        padding: 20px;
-        h1 {
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+        font-size: 35px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 30px;
     }
-    .buttons_box {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top:4%;
-        .button {
-            display: block;
-            margin: auto;
-            margin-bottom: 1%;
+   
+    .table {
+        background-color: #0e1d34c0;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 1%;
+        border: 2px solid #333;
+        border-collapse: collapse;
+        .thead_billing_list {
+            background-color: #0e1d34c0;
+            text-transform: uppercase;
+        }
+        th {
             text-align: center;
-            width: 170px;
-            padding: 15px;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 15px;
+            color:white;
+            background-color: #0e1d34c0;
             border: 2px solid #333;
-            border-radius: 10px; 
-            background-color: #0e1d34ea;
-            color: white;
-            &:hover{
-                background-color: #0e1d34c0;
-            }
-            span{
-              margin-left:3%;
-            }
+            padding: 5px;
+        }
+        td {
+            text-align: center;
+            border: 2px solid #333;
+            vertical-align: middle;
+            padding: 5px;
         }
     }
 }
 
-@media screen and (max-width: 576px) {
-
-    .dashboard_container {
-        min-height: 83vh;
-        .title {
-            h1 {
-                font-size: 25px;
-            }
-        }
-        .buttons_box {
-            margin-bottom: 5%;
-            .button {
-                margin-top: 5%;
-            }
-        }
-    }
-
-}
-
-@media screen and (min-width: 577px) {
-
-    .dashboard_container {
-        min-height: 85vh;
-        .title {
-            h1 {
-                font-size: 30px;
-            }
-        }
-        .buttons_box {
-            margin-bottom: 5%;
-            .button {
-                margin-top: 5%;
-            }
-        }
-    }
-
-}
-
-@media screen and (min-width: 992px) {
-
-    .dashboard_container {
-        min-height: 79vh;
-        .title {
-            h1 {
-                font-size: 35px;
-            }
-        }
-        .buttons_box {
-          margin-bottom: 5%;
-            .button {
-                margin-top: 2%;
-            }
-        }
-    }
-
-}
 $color-secondary: var(--color-secondary);
 $color-primary: var(--color-primary);
 $font-primary: var(--font-primary);
 
-.dashboard {
+.billing_list {
   width: 100%;
   min-height: 50vh;
   background-color: $color-secondary;
-  background-image: linear-gradient(#0e1d34ea,#0e1d34dc,#0e1d34c0), url("../../assets/img/dashboard.jpg");
+  background-image: linear-gradient(#0e1d34ea,#0e1d34dc,#0e1d34c0), url("../../../assets/img/billing.jpg");
   background-size: cover;
   background-position: center;
   position: relative;

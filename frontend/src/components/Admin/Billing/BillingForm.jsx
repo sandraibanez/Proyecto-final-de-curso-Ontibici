@@ -40,6 +40,10 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
 
     return (
         <form className='billing_form' onSubmit={handleSubmit(send_data)}>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <div className='rent_id_box'>
                 <label htmlFor="rent_id" className='etiqueta'>Rent ID:</label>
                 <input type="text" id="rent_id" {...register('rent_id')}/><br/>
