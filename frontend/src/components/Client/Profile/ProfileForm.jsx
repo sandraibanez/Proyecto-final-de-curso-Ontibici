@@ -81,53 +81,59 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
         : <p>There are no slot incidents</p>
 
     const Incidents_station = station.length > 0 ?
-    <div className="incidents_list_container_station">
-    <table className="station_table" border="1">
-        <thead className="thead_incidents_list">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Description</th>
-                <th>Station ID</th>
-            </tr>
-        </thead>
-        <tbody className="tbody_incidents_list">
-            {
-                station.map((station, index) => (
-                    <ListIncidenciasstation key={index} station={station} type={"slot"} />
-                ))
-            }
-        </tbody>
-    </table>
-    </div>
-    : <p>There are no station incidents</p>
+        <div className="incidents_list_container_station">
+            <table className="station_table" border="1">
+                <thead className="thead_incidents_list">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Station ID</th>
+                    </tr>
+                </thead>
+                <tbody className="tbody_incidents_list">
+                    {
+                        station.map((station, index) => (
+                            <ListIncidenciasstation key={index} station={station} type={"slot"} />
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+        : <p>There are no station incidents</p>
 
     return (
         <div className='profile_page'>
             <form onSubmit={handleSubmit(send_data)}>
+
                 <div className="profile">
-                    <div className='profile_image'>
-                        <img className='user_image' src={profile.image} alt='' />
-                        <span className="error">{errors.image?.message}</span>
+                    <div className='profile_image_'>
+                        <div className='profile_image'>
+                            <img className='user_image' src={profile.image} alt='' />
+                            {/* <span className="error">{errors.image?.message}</span> */}
+                        </div>
                     </div>
+
                     <div className='profile_user'>
                         <div className='attribute_box'>
                             {/* <div className="etiqueta">
                                  <label htmlFor="username" >Username:</label>
                             </div> */}
-                           
+
                             <p type="text" id="username">{user.username}</p>
-                            
+
                         </div>
                         <div className='attribute_box'>
                             {/* <label htmlFor="email" className='etiqueta'>Email:</label> */}
                             <p type="text" id="email">{user.email}</p>
-                            
+
                         </div>
                         <div className="error_server">{errorMSG}</div>
                     </div>
                 </div>
+
+
             </form>
             <h1>Billing</h1>
             <div className="billing">

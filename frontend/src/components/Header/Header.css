@@ -20,7 +20,7 @@
   /* Colors */
   :root {
     --color-default: #0a0d13;
-    --color-primary: #0d42ff;
+    --color-primary: #fff;
     --color-secondary: #0e1d34;
   }
   
@@ -205,7 +205,7 @@
   transition: all 0.5s;
   z-index: 997;
   padding: 30px 0;
-  color:#0d42ff;
+  color:#fff;
 }
 
 .header.sticked {
@@ -226,4 +226,12 @@
   font-weight: 700;
   color: #fff;
   font-family: var(--font-primary);
+}
+
+
+.button_color{
+  background-color:rgba(255, 255, 255, 0.725);
+}
+.link{
+  color:white;
 }

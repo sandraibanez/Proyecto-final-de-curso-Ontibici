@@ -1,56 +1,65 @@
 .stations_list_container {
-    // padding: 20px;
-    min-height: 77vh;
-    overflow-x: auto;
-    h1 {
-        text-align: center;
-        font-size: 35px;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 30px;
+  // padding: 20px;
+  min-height: 77vh;
+  overflow-x: auto;
+
+  h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px;
+  }
+
+  .add_button {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #0e1d34ea;
+    color: white;
+
+    &:hover {
+      background-color: #0e1d34c0;
     }
-    .add_button {
-        display: block;
-        width: 150px;
-        padding: 10px;
-        margin: auto;
-        margin-bottom: 3%;
-        margin-top:3%;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-        border: 2px solid #333;
-        border-radius: 10px; 
-        background-color: #0e1d34ea;
-        color: white;
-        &:hover{
-            background-color: #0e1d34c0;
-        }
+  }
+
+  .table {
+    background-color: #EAF2E3;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1%;
+    border: 2px solid #333;
+    border-collapse: collapse;
+
+    .thead_stations_list {
+      background-color: #0e1d34c0;
+      text-transform: uppercase;
     }
-    .table {
-        background-color: #EAF2E3;
-        width: 80%;
-        margin: auto;
-        margin-bottom: 1%;
-        border: 2px solid #333;
-        border-collapse: collapse;
-        .thead_stations_list {
-            background-color: #66D7D1;
-            text-transform: uppercase;
-        }
-        th {
-            text-align: center;
-            border: 2px solid #333;
-            padding: 5px;
-        }
-        td {
-            text-align: center;
-            border: 2px solid #333;
-            vertical-align: middle;
-            padding: 5px;
-        }
+
+    th {
+      background-color: #0e1d34c0;
+      color: white;
+      text-align: center;
+      border: 2px solid #333;
+      padding: 5px;
     }
+
+    td {
+      text-align: center;
+      border: 2px solid #333;
+      vertical-align: middle;
+      padding: 5px;
+    }
+  }
 }
 
 $color-secondary: var(--color-secondary);
@@ -61,7 +70,7 @@ $font-primary: var(--font-primary);
   width: 100%;
   min-height: 50vh;
   background-color: $color-secondary;
-  background-image: linear-gradient(#0e1d34ea,#0e1d34dc,#0e1d34c0), url("../../../assets/img/station_list.jpg");
+  background-image: linear-gradient(#0e1d34ea, #0e1d34dc, #0e1d34c0), url("../../../assets/img/station_list.jpg");
   background-size: cover;
   background-position: center;
   position: relative;

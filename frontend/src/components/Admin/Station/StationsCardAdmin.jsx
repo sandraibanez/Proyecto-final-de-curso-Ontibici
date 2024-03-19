@@ -12,7 +12,7 @@ export default function StationsCardAdmin ({ station, index, deleteStation }) {
 
     return (
         
-            <tr className="col-lg-12 col-md-6" data-aos="fade" data-aos-delay="400">
+            <tr>
                 <td className="id_col">{station.id}</td>
                 <td>{station.slug}</td>
                 <td>{station.name}</td>
