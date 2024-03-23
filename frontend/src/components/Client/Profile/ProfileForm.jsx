@@ -7,7 +7,8 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useNotifications } from "../../../hooks/useNotifications";
 import { useParams } from "react-router-dom";
 import Notification from "../Notifications/Notification";
-// import ListIncidencias from './Listincidencias';
+import userimg from "../../../assets/img/user.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ListIncidenciasslot from './ListIncidenciasslot';
 import ListIncidenciasstation from './ListIncidenciasstation';
 import Billing from './Billing';
@@ -110,23 +111,21 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
                 <div className="profile">
                     <div className='profile_image_'>
                         <div className='profile_image'>
-                            <img className='user_image' src={profile.image} alt='' />
+                            <img className='user_image' src={userimg} alt='' />
                             {/* <span className="error">{errors.image?.message}</span> */}
                         </div>
                     </div>
 
                     <div className='profile_user'>
+                        <br/>
+                    <FontAwesomeIcon icon="fa-solid fa-user" />
                         <div className='attribute_box'>
-                            {/* <div className="etiqueta">
-                                 <label htmlFor="username" >Username:</label>
-                            </div> */}
-
-                            <p type="text" id="username">{user.username}</p>
+                            <p type="text" id="username">{user.username} </p>
 
                         </div>
+                        <FontAwesomeIcon icon="fa-solid fa-envelope" />
                         <div className='attribute_box'>
-                            {/* <label htmlFor="email" className='etiqueta'>Email:</label> */}
-                            <p type="text" id="email">{user.email}</p>
+                            <p type="text" id="email">{user.email} </p>
 
                         </div>
                         <div className="error_server">{errorMSG}</div>

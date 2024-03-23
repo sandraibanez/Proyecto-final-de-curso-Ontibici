@@ -24,28 +24,30 @@ export default function StationsListAdmin({ stations, deleteStation }) {
                 </div>
             </div>
             <button className="button add_button" onClick={() => redirects.add_station()}>Add station</button>
-            <table className="table"  border="1">
-                <thead className="thead_stations_list">
-                    <tr >
-                        <th>ID</th>
-                        <th>slug</th>
-                        <th>Name</th>
-                        <th>img</th>
-                        <th>Location</th>
-                        <th>Latitud</th>
-                        <th>Longitud</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                
-                <tbody className="tbody_stations_list" >
-                    {
-                        stations.map((station, index) => (
-                            <StationsCardAdmin key={index} station={station} deleteStation={deleteStation} />
-                        ))
-                    }
-                </tbody>
-            </table>
+            <div className='table-responsive'>
+                <table className="table" border="1">
+                    <thead className="thead_stations_list">
+                        <tr >
+                            <th>ID</th>
+                            <th>slug</th>
+                            <th>Name</th>
+                            <th>img</th>
+                            <th>Location</th>
+                            <th>Latitud</th>
+                            <th>Longitud</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody className="tbody_stations_list" >
+                        {
+                            stations.map((station, index) => (
+                                <StationsCardAdmin key={index} station={station} deleteStation={deleteStation} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

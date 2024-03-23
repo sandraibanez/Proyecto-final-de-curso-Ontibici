@@ -40,18 +40,14 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
 
     return (
         <form className='billing_form' onSubmit={handleSubmit(send_data)}>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             <div className='rent_id_box'>
                 <label htmlFor="rent_id" className='etiqueta'>Rent ID:</label>
-                <input type="text" id="rent_id" {...register('rent_id')}/><br/>
+                <input type="text" id="rent_id" {...register('rent_id')} readOnly/><br/>
                 <span className="error">{errors.rent_id?.message}</span>
             </div>
             <div className='direction_box'>
                 <label htmlFor="user_id" className='etiqueta'>User ID:</label>
-                <input type="text" id="user_id" {...register('user_id')}/><br/>
+                <input type="text" id="user_id" {...register('user_id')} readOnly/><br/>
                 <span className="error">{errors.user_id?.message}</span>
             </div>
             

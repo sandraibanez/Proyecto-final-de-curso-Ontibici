@@ -16,49 +16,51 @@ export default function IncidentsListAdmin({ incidents_slots, deleteIncidenceslo
                 </div>
             </div>
             <h3>Incidents Slots List</h3>
-            <table className="slot_table" border="1">
-                <thead className="thead_incidents_list">
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Description</th>
-                        <th>Slot ID</th>
-                        <th>User</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody className="tbody_incidents_list">
-                    {
-                        incidents_slots.map((incidence, index) => (
-                            <IncidentsCardAdmin key={index} incidence={incidence} deleteIncidence={deleteIncidenceslot} type={"slot"} />
-                        ))
-                    }
-                </tbody>
-            </table>
-
+            <div className='table-responsive'>
+                <table className="slot_table" border="1">
+                    <thead className="thead_incidents_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Slot ID</th>
+                            <th>User</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody_incidents_list">
+                        {
+                            incidents_slots.map((incidence, index) => (
+                                <IncidentsCardAdmin key={index} incidence={incidence} deleteIncidence={deleteIncidenceslot} type={"slot"} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
             <h3>Incidents Stations List</h3>
-            <table className="slot_table" border="1">
-                <thead className="thead_incidents_list">
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Description</th>
-                        <th>Station ID</th>
-                        <th>User</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody className="tbody_incidents_list">
-                    {
-                        incidents_station.map((incidence_station, index) => (
-                            <IncidentsCardAdminStation key={index} incidence_station={incidence_station} deleteIncidence={deleteIncidencestation} type={"station"} />
-                        ))
-                    }
-                </tbody>
-            </table>
-
+            <div className='table-responsive'>
+                <table className="slot_table" border="1">
+                    <thead className="thead_incidents_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Station ID</th>
+                            <th>User</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody_incidents_list">
+                        {
+                            incidents_station.map((incidence_station, index) => (
+                                <IncidentsCardAdminStation key={index} incidence_station={incidence_station} deleteIncidence={deleteIncidencestation} type={"station"} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

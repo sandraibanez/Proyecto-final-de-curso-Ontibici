@@ -15,24 +15,26 @@ export default function StationsListAdmin({ stations }) {
                     </div>
                 </div>
             </div>
-            <table className="table" border="1">
-                <thead className="thead_stations_list">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>location</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                
-                <tbody className="tbody_stations_list">
-                    {
-                        stations.map((station, index) => (
-                            <StationsslotCardAdmin key={index} station={station} />
-                        ))
-                    }
-                </tbody>
-            </table>
+            <div className='table-responsive'>
+                <table className="table" border="1">
+                    <thead className="thead_stations_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody className="tbody_stations_list">
+                        {
+                            stations.map((station, index) => (
+                                <StationsslotCardAdmin key={index} station={station} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

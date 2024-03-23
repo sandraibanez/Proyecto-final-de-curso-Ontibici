@@ -16,25 +16,27 @@ export default function SlotListAdmin({ station, slots }) {
                     </div>
                 </div>
             </div>
-            <table className="table" border="1">
-                <thead className="thead_stations_list">
-                    <tr>
-                        <th>ID</th>
-                        <th>Slot number</th>
-                        <th>status</th>
-                        <th>bici_id</th>
-                        <th>station ID</th>
-                    </tr>
-                </thead>
-                
-                <tbody className="tbody_stations_list">
-                    {
-                        slots.map((slots, index) => (
-                            <SlotCardAdmin key={index} slots={slots} />
-                        ))
-                    }
-                </tbody>
-            </table>
+            <div className='table-responsive'>
+                <table className="table" border="1">
+                    <thead className="thead_stations_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Slot number</th>
+                            <th>status</th>
+                            <th>bici_id</th>
+                            <th>station ID</th>
+                        </tr>
+                    </thead>
+
+                    <tbody className="tbody_stations_list">
+                        {
+                            slots.map((slots, index) => (
+                                <SlotCardAdmin key={index} slots={slots} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

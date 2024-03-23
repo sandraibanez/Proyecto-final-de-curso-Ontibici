@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { useIncidents } from "../../../hooks/useIncidents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function IncidentsCardAdminStation ({ incidence_station, index, deleteIncidence, type }) {
+export default function IncidentsCardAdminStation({ incidence_station, index, deleteIncidence, type }) {
     const { useUpdateIncidenceStation } = useIncidents();
 
     const id = type == 'station' ? incidence_station.station_id : incidence_station.station_id;
@@ -28,8 +28,8 @@ export default function IncidentsCardAdminStation ({ incidence_station, index, d
         setValue('status', incidence_station.status);
     }, [incidence_station]);
 
-    const status_icon_station = incidence_station.status === 'pending' ? <FontAwesomeIcon className='pending_icon' icon="fa-regular fa-circle"/> : incidence_station.status === 'in_progress' ? 
-    <FontAwesomeIcon className='progress_icon' icon="fa-solid fa-circle-half-stroke"/> : <FontAwesomeIcon className='resolved_icon' icon="fa-solid fa-circle-check"/>;
+    const status_icon_station = incidence_station.status === 'pending' ? <FontAwesomeIcon className='pending_icon' icon="fa-regular fa-circle" /> : incidence_station.status === 'in_progress' ?
+        <FontAwesomeIcon className='progress_icon' icon="fa-solid fa-circle-half-stroke" /> : <FontAwesomeIcon className='resolved_icon' icon="fa-solid fa-circle-check" />;
 
     return (
         <tr>
@@ -41,16 +41,32 @@ export default function IncidentsCardAdminStation ({ incidence_station, index, d
             <td>{incidence_station.user_id}</td>
             <td>
                 <Popover className="popover">
-                    <Popover.Panel className="popover_panel_station">
-                        <form className="popover_form" onSubmit={handleSubmit(onSubmit)}>
-                            <input type="radio" value="pending" name="status" {...register('status')}/>Pending
-                            <input type="radio" value="in_progress" name="status" {...register('status')}/>In progress
-                            <input type="radio" value="resolved" name="status" {...register('status')}/>Resolved
-                            <span className="error">{errors.status?.message}</span>
-                            <button type="submit" className="status_check"><FontAwesomeIcon icon="fa-solid fa-circle-check"/></button>
-                        </form>
-                    </Popover.Panel>
-                    <Popover.Button  className="button_update">Update Status</Popover.Button >
+                    <div className=" d-none d-lg-block">
+                        <Popover.Panel className="popover_panel_station">
+                            <form className="popover_form" onSubmit={handleSubmit(onSubmit)}>
+                                <input type="radio" value="pending" name="status" {...register('status')} />Pending
+                                <input type="radio" value="in_progress" name="status" {...register('status')} />In progress
+                                <input type="radio" value="resolved" name="status" {...register('status')} />Resolved
+                                <span className="error">{errors.status?.message}</span>
+                                <button type="submit" className="status_check"><FontAwesomeIcon icon="fa-solid fa-circle-check" /></button>
+                            </form>
+                        </Popover.Panel>
+                    </div>
+                    <div className=" d-lg-none d-sm-block d-md-block">
+                        <Popover.Panel className="popover_panel_station_list">
+                            <form className="popover_form_list" onSubmit={handleSubmit(onSubmit)}>
+                                <ul>
+                                    <li> <input type="radio" value="pending" name="status" {...register('status')} />Pending</li>
+                                    <li> <input type="radio" value="in_progress" name="status" {...register('status')} />In progress</li>
+                                    <li><input type="radio" value="resolved" name="status" {...register('status')} />Resolved</li>
+                                    <span className="error">{errors.status?.message}</span>
+                                    <button type="submit" className="status_check"><FontAwesomeIcon icon="fa-solid fa-circle-check" /></button>
+                                </ul>
+
+                            </form>
+                        </Popover.Panel>
+                    </div>
+                    <Popover.Button className="button_update">Update Status</Popover.Button >
                     <button className="button_delete" onClick={() => deleteIncidence(type, incidence_station.id)}>Delete</button>
                 </Popover>
             </td>

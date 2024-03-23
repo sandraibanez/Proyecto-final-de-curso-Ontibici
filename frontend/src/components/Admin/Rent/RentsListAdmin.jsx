@@ -15,27 +15,29 @@ export default function RentsListAdmin({ rents, deleteRent }) {
                     </div>
                 </div>
             </div>
-            <table className="table" border="1">
-                <thead className="thead_rents_list">
-                    <tr>
-                        <th>ID</th>
-                        <th>Initial Date</th>
-                        <th>End Date</th>
-                        <th>End Slot</th>
-                        <th>Initial Slot</th>
-                        <th>Bici</th>
-                        <th>User</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody className="tbody_rents_list">
-                    {
-                        rents.map((rent, index) => (
-                            <RentsCardAdmin key={index} rent={rent} deleteRent={deleteRent} />
-                        ))
-                    }
-                </tbody>
-            </table>
+            <div className='table-responsive'>
+                <table className="table" border="1">
+                    <thead className="thead_rents_list">
+                        <tr>
+                            <th>ID</th>
+                            <th>Initial Date</th>
+                            <th>End Date</th>
+                            <th>End Slot</th>
+                            <th>Initial Slot</th>
+                            <th>Bici</th>
+                            <th>User</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody_rents_list">
+                        {
+                            rents.map((rent, index) => (
+                                <RentsCardAdmin key={index} rent={rent} deleteRent={deleteRent} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

@@ -32,7 +32,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def token(self):
-        return self.generate_token_jwt(1080)
+        return self.generate_token_jwt(259200)
     
     @property
     def ref_token(self):

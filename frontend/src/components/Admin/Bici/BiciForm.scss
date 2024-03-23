@@ -1,8 +1,5 @@
-form{
-    margin-left: 33%;
-}
 .Bici_add_container, .Bici_update_container {
-    padding: 20px;
+    // padding: 20px;
     width: 100%;
     
     .title {
@@ -22,6 +19,7 @@ form{
         display: flex;
         flex-direction: column;
         justify-content: left;
+        margin-left: 33%;
         div {
             display: block;
             width: 60%;

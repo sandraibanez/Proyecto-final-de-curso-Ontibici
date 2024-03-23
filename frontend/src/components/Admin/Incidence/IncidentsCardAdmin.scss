@@ -82,5 +82,27 @@
             }
         }
     }
+    .popover_panel_list {
+        padding: 10px;
+        margin-top: -60px;
+        width: 150px;
+        height: 100px;
+        background-color: white;
+        border: 1px solid #333;
+        border-radius: 15px;
+        .popover_form_list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-weight: 700;
+            .status_check {
+                font-size: 17px;
+                border: none;
+                color: #16bb16;
+                background-color: transparent;
+            }
+        }
+    }
 }
 
