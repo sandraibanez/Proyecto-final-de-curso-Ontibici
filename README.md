@@ -88,5 +88,5 @@ Tener instalado las siguientes herramientas:
 
 # Librerias
 
-[Boostrap](https://getbootstrap.com/)
-[Fontawesome](https://fontawesome.com/)
+* [Boostrap](https://getbootstrap.com/)
+* [Fontawesome](https://fontawesome.com/)
