@@ -69,22 +69,22 @@ Tener instalado las siguientes herramientas:
 
 # Backend
 
-virtualenv 1_CRUD --python=python3         virtualenv Django_React
-$ source 1_CRUD/bin/activate       Django_React\Scripts\activate
-$ pip3 install postgre
-$ pip3 install django
-$ pip3 install djangorestframework
-$ pip3 install django-cors-headers
-$ pip3 freeze > requirements.txt
-$ pip3 install -r requirements.txt
-$ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py createsuperuser
+* virtualenv 1_CRUD --python=python3         virtualenv Django_React
+* $ source 1_CRUD/bin/activate       Django_React\Scripts\activate
+* $ pip3 install postgre
+* $ pip3 install django
+* $ pip3 install djangorestframework
+* $ pip3 install django-cors-headers
+* $ pip3 freeze > requirements.txt
+* $ pip3 install -r requirements.txt
+* $ python manage.py makemigrations
+* $ python manage.py migrate
+* $ python manage.py createsuperuser
 
 # Frontend
 
-npm install
-npm run dev
+* npm install
+* npm run dev
 
 # Librerias
 
