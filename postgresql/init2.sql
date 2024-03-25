@@ -1,10 +1,10 @@
 -- failed to get console mode for stdout: Controlador no v├ílido.
---
--- PostgreSQL database dump
---
+-- --
+-- -- PostgreSQL database dump
+-- --
 
--- Dumped from database version 15.5 (Debian 15.5-1.pgdg120+1)
--- Dumped by pg_dump version 15.5 (Debian 15.5-1.pgdg120+1)
+-- -- Dumped from database version 15.5 (Debian 15.5-1.pgdg120+1)
+-- -- Dumped by pg_dump version 15.5 (Debian 15.5-1.pgdg120+1)
 
 -- SET statement_timeout = 0;
 -- SET lock_timeout = 0;
@@ -682,6 +682,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 COPY public.billing_billing (id, start_rent_id, end_rent_id, pay, rent_id, user_id) FROM stdin;
 1	\N	\N	20	1	1
 2	\N	\N	28	1	1
+3	\N	\N	29	6	1
 \.
 
 
@@ -791,7 +792,7 @@ COPY public.incidents_incidenceslot (id, title, status, "desc", slot_id, user_id
 --
 
 COPY public.incidents_incidencestation (id, title, status, "desc", station_id, user_id) FROM stdin;
-1	Estacion 1	in_progress	Estacion da├▒ada	1	1
+1	Estacion 1	in_progress	Estacion daÔö£ÔûÆada	1	1
 \.
 
 
@@ -815,6 +816,8 @@ COPY public.rent_rent (id, initial_date, end_date, bici_id, end_slot_id, initial
 4	2024-03-08 10:45:28.030287+00	2024-03-08 10:45:33.733853+00	4	4	4	1
 5	2024-03-08 10:48:26.327637+00	2024-03-08 10:48:39.48417+00	5	5	5	1
 6	2024-03-08 10:53:43.883038+00	2024-03-08 10:53:49.655934+00	1	1	1	1
+7	2024-03-24 13:06:51.375352+00	2024-03-24 13:07:29.596523+00	2	36	2	1
+8	2024-03-24 13:23:06.014625+00	2024-03-24 13:23:14.979766+00	2	6	36	1
 \.
 
 
@@ -823,11 +826,11 @@ COPY public.rent_rent (id, initial_date, end_date, bici_id, end_slot_id, initial
 --
 
 COPY public.stations_bicis (id, slug, name, status) FROM stdin;
-2	bici2-w4855c	Bici2	vacant
 3	bici3-86n0hr	Bici3	vacant
 4	bici4-f4i3mv	Bici4	vacant
 5	bici4-dkbiiu	Bici5	vacant
 1	bici1-5jxqzv	Bici1	vacant
+2	bici2-w4855c	Bici2	vacant
 \.
 
 
@@ -836,11 +839,121 @@ COPY public.stations_bicis (id, slug, name, status) FROM stdin;
 --
 
 COPY public.stations_slot (id, status, slot_number, bici_id, stations_id) FROM stdin;
-2	in_use	2	2	1
 3	in_use	3	3	1
 4	in_use	4	4	1
 5	in_use	5	5	1
 1	in_use	1	1	1
+7	vacant	2	\N	2
+8	vacant	3	\N	2
+9	vacant	4	\N	2
+10	vacant	5	\N	2
+11	vacant	1	\N	3
+12	vacant	2	\N	3
+13	vacant	3	\N	3
+14	vacant	4	\N	3
+15	vacant	5	\N	3
+16	vacant	1	\N	4
+17	vacant	2	\N	4
+18	vacant	3	\N	4
+19	vacant	4	\N	4
+20	vacant	5	\N	4
+21	vacant	1	\N	5
+22	vacant	2	\N	5
+23	vacant	3	\N	5
+24	vacant	4	\N	5
+25	vacant	5	\N	5
+26	vacant	1	\N	6
+27	vacant	2	\N	6
+28	vacant	3	\N	6
+29	vacant	4	\N	6
+30	vacant	5	\N	6
+31	vacant	1	\N	7
+32	vacant	2	\N	7
+33	vacant	3	\N	7
+34	vacant	4	\N	7
+35	vacant	5	\N	7
+36	vacant	1	\N	8
+37	vacant	2	\N	8
+38	vacant	3	\N	8
+39	vacant	4	\N	8
+40	vacant	5	\N	8
+41	vacant	1	\N	9
+42	vacant	2	\N	9
+43	vacant	3	\N	9
+44	vacant	4	\N	9
+45	vacant	5	\N	9
+46	vacant	1	\N	10
+47	vacant	2	\N	10
+48	vacant	3	\N	10
+49	vacant	4	\N	10
+50	vacant	5	\N	10
+51	vacant	1	\N	11
+52	vacant	2	\N	11
+53	vacant	3	\N	11
+54	vacant	4	\N	11
+55	vacant	5	\N	11
+56	vacant	1	\N	12
+57	vacant	2	\N	12
+58	vacant	3	\N	12
+59	vacant	4	\N	12
+60	vacant	5	\N	12
+61	vacant	1	\N	13
+62	vacant	2	\N	13
+63	vacant	3	\N	13
+64	vacant	4	\N	13
+65	vacant	5	\N	13
+66	vacant	1	\N	14
+67	vacant	2	\N	14
+68	vacant	3	\N	14
+69	vacant	4	\N	14
+70	vacant	5	\N	14
+71	vacant	1	\N	15
+72	vacant	2	\N	15
+73	vacant	3	\N	15
+74	vacant	4	\N	15
+75	vacant	5	\N	15
+76	vacant	1	\N	16
+77	vacant	2	\N	16
+78	vacant	3	\N	16
+79	vacant	4	\N	16
+80	vacant	5	\N	16
+81	vacant	1	\N	17
+82	vacant	2	\N	17
+83	vacant	3	\N	17
+84	vacant	4	\N	17
+85	vacant	5	\N	17
+86	vacant	1	\N	18
+87	vacant	2	\N	18
+88	vacant	3	\N	18
+89	vacant	4	\N	18
+90	vacant	5	\N	18
+91	vacant	1	\N	19
+92	vacant	2	\N	19
+93	vacant	3	\N	19
+94	vacant	4	\N	19
+95	vacant	5	\N	19
+96	vacant	1	\N	20
+97	vacant	2	\N	20
+98	vacant	3	\N	20
+99	vacant	4	\N	20
+100	vacant	5	\N	20
+101	vacant	1	\N	21
+102	vacant	2	\N	21
+103	vacant	3	\N	21
+104	vacant	4	\N	21
+105	vacant	5	\N	21
+106	vacant	1	\N	22
+107	vacant	2	\N	22
+108	vacant	3	\N	22
+109	vacant	4	\N	22
+110	vacant	5	\N	22
+111	vacant	1	\N	23
+112	vacant	2	\N	23
+113	vacant	3	\N	23
+114	vacant	4	\N	23
+115	vacant	5	\N	23
+2	vacant	2	\N	1
+6	in_use	1	2	2
 \.
 
 
@@ -849,7 +962,29 @@ COPY public.stations_slot (id, status, slot_number, bici_id, stations_id) FROM s
 --
 
 COPY public.stations_stations (id, name, direction, location, img, slug, latitud, long) FROM stdin;
-1	Estacion economica	Av. Almaig	Ontinyent	station1	estacion-economica-q2uqwq	38.81877820521563000000	-0.60651025240118350000
+1	Renfe	Renfe	Ontinyent	station1	estacion-economica-q2uqwq	38.80944214980661000000	-0.60257727579483340000
+2	Nuevo Hospital	Nuevo Hospital	Ontinyent	station1	nuevo-hospital-6rdt9z	38.80970131805818000000	-0.60755545564238440000
+3	Polideportivo	Polideportivo	Ontinyent	station1	polideportivo-gxpfa1	38.81012933224716000000	-0.61054559017149990000
+4	Camp de futbol	Camp de futbol	Ontinyent	station1	camp-de-futbol-bbadc3	38.82576790466476500000	-0.59150603527663600000
+5	Av. d'Albaida	Av. d'Albaida	Ontinyent	station1	av-dalbaida-et2u69	38.82316300241373000000	-0.59906507764357350000
+6	C.E.I.P. Mart├¡nez Valls	C.E.I.P. Mart├¡nez Valls	Ontinyent	station1	ceip-martinez-valls-t8oe54	38.82344907843312000000	-0.59782815817909610000
+7	C.C. El Teler	C.C. El Teler	Ontinyent	station1	cc-el-teler-62g9uv	38.82465662079304000000	-0.60315977764348230000
+8	Parking Paduana	Parking Paduana	Ontinyent	station1	parking-paduana-79yz6l	38.82613233006911500000	-0.60376024510859030000
+9	Av. Vicente Giron├®s	Av. Vicente Giron├®s	Ontinyent	station1	av-vicente-girones-ugc0o2	38.82585813833773000000	-0.61380180647908600000
+10	Orutjol	Orutjol	Ontinyent	station1	orutjol-4n0rf8	38.82365737869654500000	-0.61579893346527950000
+11	Casa Cultura S.Rafael	Casa Cultura S.Rafael	Ontinyent	station1	casa-cultura-srafael-ybyjin	38.82150082394641000000	-0.61620662922176610000
+12	Almansa	Almansa	Ontinyent	station1	almansa-47qn44	38.82073180414604000000	-0.61872790560076010000
+13	Salvador Tormo	Salvador Tormo	Ontinyent	station1	salvador-tormo-q2xmir	38.82316492378734600000	-0.60174216600013620000
+14	Estelles	Estelles	Ontinyent	station1	estelles-2wz3us	38.81914783188709000000	-0.60029401215270430000
+15	Hospital General	Hospital General	Ontinyent	station1	hospital-general-8jk1df	38.82000571411388000000	-0.60289608146715070000
+16	Pla├ºa d'Ovidi Montllor	Pla├ºa d'Ovidi Montllor	Ontinyent	station1	placa-dovidi-montllor-07d0sw	38.81789877531785000000	-0.60388623346561740000
+17	C. San Antonio	C. San Antonio	Ontinyent	station1	c-san-antonio-d6bdft	38.81943411711563400000	-0.60550417579420390000
+18	IES Jaume I	IES Jaume I	Ontinyent	station1	ies-jaume-i-u3f6vz	38.82155446550495000000	-0.59793135805595310000
+19	Universidad	Universidad	Ontinyent	station1	universidad-rcq8gr	38.81776131522773000000	-0.60934682182215030000
+20	Conservatorio	Conservatorio	Ontinyent	station1	conservatorio-g2fg09	38.81996614037482000000	-0.60811500462983550000
+21	C. Alcalde Paco Montes	C. Alcalde Paco Montes	Ontinyent	station1	c-alcalde-paco-montes-yrmfst	38.82259751934312000000	-0.60610280462968600000
+22	C. de Maians	C. de Maians	Ontinyent	station1	c-de-maians-cld5vt	38.82273993687415000000	-0.60829447579403140000
+23	Monges-magdalena	Monges-magdalena	Ontinyent	station1	monges-magdalena-vtmg5j	38.81924212621449000000	-0.61191139632546370000
 \.
 
 
@@ -912,7 +1047,7 @@ SELECT pg_catalog.setval('public.auth_permission_id_seq', 64, true);
 -- Name: billing_billing_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.billing_billing_id_seq', 2, true);
+SELECT pg_catalog.setval('public.billing_billing_id_seq', 3, true);
 
 
 --
@@ -968,7 +1103,7 @@ SELECT pg_catalog.setval('public.incidents_notification_id_seq', 1, true);
 -- Name: rent_rent_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.rent_rent_id_seq', 6, true);
+SELECT pg_catalog.setval('public.rent_rent_id_seq', 8, true);
 
 
 --
@@ -982,14 +1117,14 @@ SELECT pg_catalog.setval('public.stations_bicis_id_seq', 5, true);
 -- Name: stations_slot_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.stations_slot_id_seq', 5, true);
+SELECT pg_catalog.setval('public.stations_slot_id_seq', 115, true);
 
 
 --
 -- Name: stations_stations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.stations_stations_id_seq', 1, true);
+SELECT pg_catalog.setval('public.stations_stations_id_seq', 23, true);
 
 
 --
