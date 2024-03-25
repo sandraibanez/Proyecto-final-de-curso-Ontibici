@@ -41,8 +41,8 @@ export default function IncidentsCardAdminStation({ incidence_station, index, de
             <td>{incidence_station.user_id}</td>
             <td>
                 <Popover className="popover">
-                    <div className=" d-none d-lg-block">
-                        <Popover.Panel className="popover_panel_station">
+                    {/* <div className=" d-none d-lg-block"> */}
+                        {/* <Popover.Panel className="popover_panel_station">
                             <form className="popover_form" onSubmit={handleSubmit(onSubmit)}>
                                 <input type="radio" value="pending" name="status" {...register('status')} />Pending
                                 <input type="radio" value="in_progress" name="status" {...register('status')} />In progress
@@ -50,9 +50,9 @@ export default function IncidentsCardAdminStation({ incidence_station, index, de
                                 <span className="error">{errors.status?.message}</span>
                                 <button type="submit" className="status_check"><FontAwesomeIcon icon="fa-solid fa-circle-check" /></button>
                             </form>
-                        </Popover.Panel>
-                    </div>
-                    <div className=" d-lg-none d-sm-block d-md-block">
+                        </Popover.Panel> */}
+                    {/* </div> */}
+                    <div className=" d-lg-block d-sm-block d-md-block">
                         <Popover.Panel className="popover_panel_station_list">
                             <form className="popover_form_list" onSubmit={handleSubmit(onSubmit)}>
                                 <ul>

@@ -41,7 +41,7 @@ export default function IncidentsCardAdmin({ incidence, index, deleteIncidence, 
             <td>{incidence.user_id}</td>
             <td>
                 <Popover className="popover">
-                    <div className=" d-none d-lg-block">
+                    {/* <div className=" d-none d-lg-block">
                         <Popover.Panel className="popover_panel">
                             <form className="popover_form" onSubmit={handleSubmit(onSubmit)}>
                                 <input type="radio" value="pending" name="status" {...register('status')} />Pending
@@ -51,8 +51,8 @@ export default function IncidentsCardAdmin({ incidence, index, deleteIncidence, 
                                 <button type="submit" className="status_check"><FontAwesomeIcon icon="fa-solid fa-circle-check" /></button>
                             </form>
                         </Popover.Panel>
-                    </div>
-                    <div className=" d-lg-none d-sm-block d-md-block">
+                    </div> */}
+                    <div className=" d-lg-block d-sm-block d-md-block">
                         <Popover.Panel className="popover_panel_list">
                             <form className="popover_form_list" onSubmit={handleSubmit(onSubmit)}>
                                 <ul>
