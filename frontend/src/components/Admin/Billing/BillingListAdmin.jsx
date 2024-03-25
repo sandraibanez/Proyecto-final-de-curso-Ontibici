@@ -15,7 +15,7 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: yupResolver(validators) });
     const payRef = useRef('');
     const send_data = (data) => {
-        console.log(data);
+        console.log('jla',data);
         localStorage.setItem('pay', data.pay);
 
     };
@@ -55,7 +55,7 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
                     </tbody>
                 </table>
             </div>
-            <div className='billing_form ' onSubmit={handleSubmit(send_data)}>
+            <form className='billing_form ' onSubmit={handleSubmit(send_data)}>
                 <div className='billing'>
                     <div className='img_box '>
                         <label htmlFor='pay' className='pay'>New pay value:</label>
@@ -65,7 +65,7 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
                     </div>
                     <button type="submit">Submit</button>
                 </div>
-            </div>
+            </form>
         </div>
     )
 }
