@@ -28,7 +28,7 @@ const Dashboard = () => {
                 </div>
             </div>
             {/* className="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="400" */}
-            <div className="buttons_box" data-aos="fade-up" data-aos-delay="100">
+            <div className="buttons_box">
                 <div>
                     <button className="button" onClick={() => redirects.stations()}><FontAwesomeIcon className='icon' icon="fas fa-charging-station"/><span>Stations List</span></button>
                 </div>

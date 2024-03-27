@@ -54,7 +54,7 @@ export default function Header() {
                     </nav>
                 </div>
                 <div className="row d-lg-none d-sm-block d-md-block">
-                    <div className='header-responsive'>
+                    <div className='d-flex flex-column header-responsive'>
                         <nav id="navbar" className="navbar">
                             <div className="button_color">
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" >
@@ -64,7 +64,7 @@ export default function Header() {
 
 
                             <div className="collapse navbar-collapse" id="navbarsExample01">
-                                <div className="header-container d-flex gap-1">
+                                <div className="header-container  d-flex flex-column gap-1">
                                     <a onClick={() => redirects.home()} type="button">Home</a>
                                     <a onClick={() => redirects.rent()} type="button">Rent</a>
                                     <a >{isAdminUser}</a>

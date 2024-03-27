@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
     
-            <div className="col-lg-2 col-6 footer-links">
+            {/* <div className="col-lg-2 col-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li><a href="#">Home</a></li>
@@ -40,7 +40,7 @@ export default function Footer() {
                 <li><a href="#">Marketing</a></li>
                 <li><a href="#">Graphic Design</a></li>
               </ul>
-            </div>
+            </div> */}
     
           </div>
         </div>

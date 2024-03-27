@@ -49,9 +49,9 @@
 
     .slots_cards-list {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-wrap: wrap;
-        margin: auto;
+        // margin: auto;
         margin-bottom: 65px;
         z-index: 0;
 
@@ -60,7 +60,7 @@
 
             .card {
                 cursor: pointer;
-
+                border-radius: 30px;
                 .card_image {
                     overflow: hidden;
                     margin-bottom: 15px;
@@ -68,7 +68,7 @@
                     width: inherit;
                     height: inherit;
                     transition: 0.3s ease-in-out;
-
+                    border-radius: 30px;
                     img {
                         width: inherit;
                         transition: 0.3s ease-in-out;

@@ -1,61 +1,65 @@
 .billing_update_container {
   width: 100%;
-  
-  .billing_form{
+
+  .billing_form {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    margin-left: 33%;
     margin-top: 5%;
     margin-bottom: 5%;
+
     div {
       display: block;
       width: 60%;
       text-align: left;
-      .etiqueta {
-          display: inline-block;
-          width: 150px;
-          text-transform: uppercase;
-          font-weight: bold;
-          padding-bottom: 10px;
-      }
+
       input {
-          border: 1px solid #008f88;
-          padding: 5px;
-          &:disabled {
-              background-color: #dbd4d4;
-          }
+        border: 1px solid #008f88;
+        padding: 5px;
+
+        &:disabled {
+          background-color: #dbd4d4;
+        }
       }
+
       select {
-          width: 195px;
-          padding: 5px;
+        width: 195px;
+        padding: 5px;
       }
+
       span {
-          padding-top: 10px;
+        padding-top: 10px;
       }
-  }
-  .buttons_box {
+    }
+
+    .buttons_box {
       display: flex;
       flex-direction: row;
-      justify-content: left;
+      justify-content: center;
       margin-top: 20px;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+
       button {
-          text-transform: uppercase;
-          font-weight: bold;
-          margin-right: 20px;
-          margin-left: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 20px;
+        margin-left: 20px;
       }
-  }
+    }
   }
 }
+
 h1 {
   text-align: center;
   font-size: 35px;
   font-weight: bold;
   text-transform: uppercase;
   padding: 30px;
-  color:white;
+  color: white;
 }
+
 $color-secondary: var(--color-secondary);
 $color-primary: var(--color-primary);
 $font-primary: var(--font-primary);

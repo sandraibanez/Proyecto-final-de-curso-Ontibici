@@ -1,0 +1,48 @@
+.billing_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // height: 100vh;
+  
+    .rent_billing,
+    .user_billing,
+    .pay_billing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+  
+      label {
+        font-weight: bold;
+        text-align: center; 
+        width: 100%; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        text-transform: uppercase;
+      }
+  
+      input {
+        text-align: center;
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+  
+      .error {
+        color: red;
+      }
+
+    }
+  
+    .buttons_box {
+      display: flex;
+      justify-content: center;
+  
+      button {
+        margin: 0 10px;
+      }
+    }
+  }
+  

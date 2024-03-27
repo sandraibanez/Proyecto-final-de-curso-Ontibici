@@ -1,12 +1,9 @@
-// import './StationsForm.scss';
 import React, { useEffect } from "react";
-
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
-
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup'; 
-
+import './BillingFrom.scss';
 const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form_type, sendData}) => {
     const navigate = useNavigate();
 
@@ -40,18 +37,18 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
 
     return (
         <form className='billing_form' onSubmit={handleSubmit(send_data)}>
-            <div className='rent_id_box'>
+            <div className='rent_billing'>
                 <label htmlFor="rent_id" className='etiqueta'>Rent ID:</label>
                 <input type="text" id="rent_id" {...register('rent_id')} readOnly/><br/>
                 <span className="error">{errors.rent_id?.message}</span>
             </div>
-            <div className='direction_box'>
+            <div className='user_billing'>
                 <label htmlFor="user_id" className='etiqueta'>User ID:</label>
                 <input type="text" id="user_id" {...register('user_id')} readOnly/><br/>
                 <span className="error">{errors.user_id?.message}</span>
             </div>
             
-            <div className='img_box'>
+            <div className='pay_billing'>
                 <label htmlFor='pay' className='etiqueta'>pay:</label>
                 <input id='pay' name="pay" type="text" {...register('pay')}/><br/>
                 <span className="error">{errors.pay?.message}</span>

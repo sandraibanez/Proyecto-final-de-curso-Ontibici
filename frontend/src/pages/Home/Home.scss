@@ -9,9 +9,11 @@
         }
     }
     .maps {
-        margin-top: 50%;
+   
         display: block;
         margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
         border: 2px solid #0e1d34ea;
         border-radius: 15px;
         .mapboxgl-map {

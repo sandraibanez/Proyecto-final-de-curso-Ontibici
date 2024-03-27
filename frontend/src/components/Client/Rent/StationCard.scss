@@ -1,11 +1,12 @@
 .stations_cards-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
     margin: 0,1%;
     z-index: 0;
     gap: 30px;
+    margin-top: 5%;
       .card_title {
       text-align: center;
       font-family: sans-serif;
@@ -20,13 +21,14 @@
     border: 1px solid rgba(14, 29, 52, 0.15);
     background: #fff;
     position: relative;
-    border-radius: 0;
+    border-radius: 30px;
     height: 100%;
     .card-img {
       overflow: hidden;
       margin-bottom: 15px;
-      border-radius: 0;
-
+      // border-radius: 0;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
       img {
         width: inherit;
         height: inherit;
