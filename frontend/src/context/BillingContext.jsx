@@ -8,7 +8,7 @@ export function BillingContextProvider({ children }) {
     // console.log('hola');
     const { isAdmin } = useContext(AuthContext);
     const [billing, setbilling] = useState([]);
-
+    console.log(billing);
     useEffect(function () {
         if (isAdmin) {
             BillingService.getAllAdminBilling()

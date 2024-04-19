@@ -21,25 +21,7 @@ class BillingView(viewsets.GenericViewSet):
         billing = Billing.objects.filter(user_id=user.id)
         billing_serializer = BillingSerializer(billing, many=True)
         return Response(billing_serializer.data)
-   
-    def BillingPay(self, request):
-        bearer = request.headers['Authorization'].split()
-        serializer_context_user = {
-            'token': bearer[1]
-        }
-        serializer_user = BillingSerializer.usertoken(
-        context=serializer_context_user)
-        username = serializer_user[2]
-        if username == "admin":
-            data = request.data['billing_pay']
- 
-            serializer_context = {
-                'pay': data['pay']
-            }
-
-        pay = BillingSerializer.pay(context=serializer_context)
-        return Response({"pay":pay})
-   
+      
     def postbilling(self, request):
         bearer = request.headers['Authorization'].split()
         serializer_context_user = {

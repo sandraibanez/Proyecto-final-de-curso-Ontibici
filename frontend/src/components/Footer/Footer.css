@@ -12,14 +12,28 @@
   
   .footer .footer-info .logo {
     line-height: 0;
-    margin-bottom: 25px;
   }
   
   .footer .footer-info .logo img {
-    max-height: 40px;
-    margin-right: 6px;
+    max-height: 80px;
+    margin-right: 20px;
+  }
+  .container_contact{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* justify-content: flex-end; */
   }
   
+  .contact_info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .footer-info h2{
+    margin-right: 30px;
+  }
   .footer .footer-info .logo span {
     font-size: 30px;
     font-weight: 700;
@@ -32,7 +46,9 @@
     font-size: 14px;
     font-family: var(--font-primary);
   }
-  
+ .email{
+  margin-left: 5px;
+ }
   .footer .social-links a {
     display: flex;
     align-items: center;
@@ -58,7 +74,15 @@
     position: relative;
     padding-bottom: 12px;
   }
-  
+  .social_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    /* margin-left: 205px; */
+  }
   .footer .footer-links {
     margin-bottom: 30px;
   }

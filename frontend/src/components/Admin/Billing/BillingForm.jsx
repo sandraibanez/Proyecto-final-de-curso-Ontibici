@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import './BillingFrom.scss';
 const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form_type, sendData}) => {
     const navigate = useNavigate();
-
+    // console.log(billing);
     const validators = Yup.object().shape({
         rent_id: Yup.string().required('*Rent_id is required'),
         user_id: Yup.string().required('*User_id is required'),
@@ -31,6 +31,7 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
     const redirects = {
         billing: () => navigate('/dashboard/billing')
     };
+   
 
     const button_type = form_type == 'create' ? 'Create' : 'Update';
     const read_only = form_type == 'update' ? true : false;

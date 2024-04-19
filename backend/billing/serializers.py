@@ -25,14 +25,6 @@ class BillingSerializer(serializers.ModelSerializer):
             "rent_id": instance.rent_id,
         })
 
-    def pay(context):
-        print (context)
-        pay = context['pay']
-        # billing = Billing.objects.update(pay=pay)
-
-        # pay.save()
-        return pay
-
     def billing(context):
         print (context)
         username = context['username']

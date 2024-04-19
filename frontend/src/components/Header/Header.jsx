@@ -21,8 +21,8 @@ export default function Header() {
 
     const isUser = isAuth ? <a onClick={() => logout()} type="button">Log out</a>
         : <a onClick={() => redirects.register()}>Sign up</a>;
-
-    const isUsername = isAuth ? <a className=" position-relative" onClick={() => redirects.profile(user.id)} type="button">{user.username}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger " hidden={badge}>{notificationsNumber}</span></a>
+    // className=" position-relative"
+    const isUsername = isAuth ? <a onClick={() => redirects.profile(user.id)} type="button">{user.username}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger " hidden={badge}>{notificationsNumber}</span></a>
         : <a onClick={() => redirects.login()} type="button">Sign in</a>;
 
     const isAdminUser = isAdmin ? <a onClick={() => redirects.dashboard()} type="button">Dashboard</a> : '';

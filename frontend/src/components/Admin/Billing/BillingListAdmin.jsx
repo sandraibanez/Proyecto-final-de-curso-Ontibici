@@ -6,8 +6,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-export default function BillingListAdmin({ billing = [], deletebilling }) {
-
+export default function BillingListAdmin({ billing, deletebilling }) {
+    console.log(billing);
     const validators = Yup.object().shape({
         pay: Yup.string().required('*Pay is required'),
     });
@@ -15,7 +15,7 @@ export default function BillingListAdmin({ billing = [], deletebilling }) {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: yupResolver(validators) });
     const payRef = useRef('');
     const send_data = (data) => {
-        console.log('jla',data);
+        // console.log('jla',data);
         localStorage.setItem('pay', data.pay);
 
     };

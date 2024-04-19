@@ -16,6 +16,7 @@ const BillingUpdate = () => {
         }
         if (isCorrect) {
             navigate('/dashboard/billing');
+            console.log('bill');
         }
     }, [isCorrect, navigate]);
 

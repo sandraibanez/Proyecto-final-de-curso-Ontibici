@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export function useBici() {
     const {bici, setBici} = useContext(BiciContext);
-    console.log(bici);
+    // console.log(bici);
     const [oneBici, setOneBici] = useState({});
     const [isCorrect, setIsCorrect] = useState(false);
 

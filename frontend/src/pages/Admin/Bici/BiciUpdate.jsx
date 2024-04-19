@@ -16,6 +16,7 @@ const BiciUpdate = () => {
         }
         if (isCorrect) {
             navigate('/dashboard/Bici');
+            console.log('bici');
         }
     }, [isCorrect, navigate]);
 

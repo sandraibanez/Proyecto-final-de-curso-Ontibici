@@ -9,7 +9,7 @@ export function useBilling() {
     const [oneBilling, setOneBilling] = useState({});
     const {billing, setbilling} = useContext(BillingContext);
     const [isCorrect, setIsCorrect] = useState(false);
-    
+    console.log(billing);
   
     const useOneBilling = useCallback((id) => {
         console.log(id);
@@ -29,7 +29,7 @@ export function useBilling() {
                 })
         }
     }, [setUserBilling,isAuth])
-
+    
     const useAddBilling = useCallback((data) => {
         console.log(data);
         if (isAuth) {
@@ -48,24 +48,29 @@ export function useBilling() {
         }
     }, []);
 
-    const useUpdateBilling = (id, data, type) => {
+    const useUpdateBilling = useCallback((id,data, type) => {
         if (isAuth) {
             BillingService.updateBilling(id, data)
                 .then(({ data, status }) => {
                     if (status === 200) {
+                        
                         let old_billing = [...billing];
                         const remove_old = old_billing.findIndex(billing => billing.id === id);
                         if (remove_old !== -1) {
                             old_billing[remove_old] = data;
                             setbilling(old_billing);
                         }
+                        setIsCorrect(true);
+                        setTimeout(() => { setIsCorrect(false); }, 1000);
                     }
                 })
                 .catch((e) => {
                     // toast.error(e.response.data[0]);
                 });
         }
-    }
+    },[isAuth]);
+
+    
 
     const useDeletebilling = (type, id) => {
         // console.log(id);
@@ -81,7 +86,7 @@ export function useBilling() {
                 .catch(e => console.error(e));
             
         }
-    }
+    };
 
     
    

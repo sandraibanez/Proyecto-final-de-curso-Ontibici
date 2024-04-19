@@ -45,12 +45,12 @@ const SignInForm = ({form_type, sendData, errorMSG}) => {
                 <div className="user_options-text">
                     <div className="user_options-unregistered">
                         <h2 className="user_unregistered-title">Don't have an account?</h2>
-                        <p className="user_unregistered-text">Register now and you can rent a scooter near you.</p>
+                        <p className="user_unregistered-text">Register now and you can rent a bicycle near you.</p>
                         <button className="user_unregistered-signup" id="signup-button" onClick={() => redirects.register()}>Sign up</button>
                     </div>
                     <div className="user_options-registered">
                         <h2 className="user_registered-title">Have an account?</h2>
-                        <p className="user_registered-text">Sign in with your account and continue with your scooter renting.</p>
+                        <p className="user_registered-text">Sign in with your account and continue with your bicycle renting.</p>
                         <button className="user_registered-login" id="login-button" onClick={() => redirects.login()}>Sign in</button>
                     </div>
                 </div>
