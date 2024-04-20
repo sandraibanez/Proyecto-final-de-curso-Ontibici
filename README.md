@@ -28,7 +28,7 @@ Si el usuario logeado es un administrador el total de secciones de 5 que se trat
 * En el Rent estan todas las **estaciones lisatdas** y al pulsar en una esatcion te lleva a su details donde se estan los slots y donde el cliente podra alquilar una bicicleta.
 * Si el usuario no esta logeado al pulsar en una estacion se llevara a al usuario a la pagina de login para que se autentifique y una vez ya este logeado podra entrar al details de las esataciones.
 
-# Dashborad
+# Dashboard
 
 En el Dashborad el administrador podra realizar las sigientes acciones:
 
