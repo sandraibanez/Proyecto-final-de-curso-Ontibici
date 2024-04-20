@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import RentService from "../services/RentService";
 
 export function useRent() {
-    // console.log('holauserent');
+   
     const navigate = useNavigate();
     const [rents, setRents] = useState([]);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -27,7 +27,7 @@ export function useRent() {
         RentService.rentBici(slot)
             .then(({ data, status }) => {
                 if (status == 200) {
-                    console.log(data);
+                    
                     toast.success("Bici rented, thank you!")
                     setIsCorrect(true);
                     setTimeout(() => { setIsCorrect(false); }, 1000);

@@ -5,12 +5,12 @@ const Context = React.createContext({})
 
 export function SlotContextProvider({ children }) {
     const [slots, setSlots] = useState([]);
-    // console.log(slots);
+    
     useEffect(function () {
         SlotService.getAllSlots()
             .then(({ data }) => {
                 setSlots(data);
-                // console.log( data);
+                
             })
     }, [setSlots])
 

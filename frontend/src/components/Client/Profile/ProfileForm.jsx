@@ -13,7 +13,7 @@ import ListIncidenciasslot from './ListIncidenciasslot';
 import ListIncidenciasstation from './ListIncidenciasstation';
 import Billing from './Billing';
 const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, station, billing }) => {
-    console.log(billing);
+   
     const { id } = useParams();
     const [edit, setEdit] = useState(true);
     const { stats, useUserStats } = useAuth();
@@ -134,7 +134,8 @@ const ProfileForm = ({ user, profile, sendData, errorMSG, incidents_slots, stati
 
 
             </form>
-            <h1>Billing</h1>
+            <br/>
+            <h2>Billing</h2>
             <div className="billing">
                 <table className="billing_table" border="1">
                     <thead className="thead_incidents_list">

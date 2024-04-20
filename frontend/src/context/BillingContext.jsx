@@ -5,10 +5,12 @@ import AuthContext from './AuthContext';
 const Context = React.createContext({})
 
 export function BillingContextProvider({ children }) {
-    // console.log('hola');
+
     const { isAdmin } = useContext(AuthContext);
     const [billing, setbilling] = useState([]);
-    console.log(billing);
+    const valor = localStorage.getItem('refresh');
+    const profile = localStorage.getItem('refreshProfile');
+
     useEffect(function () {
         if (isAdmin) {
             BillingService.getAllAdminBilling()
@@ -18,6 +20,23 @@ export function BillingContextProvider({ children }) {
         }
     }, [setbilling, isAdmin])
 
+    useEffect(function () {
+        if (isAdmin) {
+            BillingService.getAllAdminBilling()
+                .then(({ data }) => {
+                    setbilling(data);
+                })
+        }
+    }, [valor])
+    
+    useEffect(function () {
+        if (isAdmin) {
+            BillingService.getAllAdminBilling()
+                .then(({ data }) => {
+                    setbilling(data);
+                })
+        }
+    }, [profile])
 
 
     return <Context.Provider value={{ billing, setbilling}}>

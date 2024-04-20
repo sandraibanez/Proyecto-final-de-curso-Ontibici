@@ -9,7 +9,7 @@ import IncidenceSlotModal from "../Incidents/IncidenceSlotModal";
 import RentModal from "./RentModal";
 
 export default function SlotCard ({ slot }) {
-    // console.log(slot);
+
     const navigate = useNavigate();
     const { isAuth } = useContext(AuthContext);
     const { isCorrect, useRentBici, useBringBackBici } = useRent();
@@ -18,7 +18,6 @@ export default function SlotCard ({ slot }) {
     const [modalSlot, setModalSlot] = useState(null);
 
     const incidence_type = 'slot';
-    console.log(slot.status);
     const img_background = slot.status === 'in_use' ? '#27EE27' : slot.status === 'vacant' ? '#FF1818' : '#FFFF37';
     const slot_status = slot.status === 'in_use' ? 'Bici available' : slot.status === 'vacant' ? 'Vacant' : 'Maintenance';
 

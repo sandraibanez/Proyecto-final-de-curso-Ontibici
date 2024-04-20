@@ -2,7 +2,7 @@ import React from 'react';
 import SlotCard from './SlotCard';
 
 export default function SlotsList ({ station, slots }) {
-console.log({station,slots});
+
     return  (
         
         <div className="slots_container">

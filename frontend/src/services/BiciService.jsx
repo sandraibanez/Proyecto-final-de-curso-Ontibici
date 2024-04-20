@@ -11,7 +11,7 @@ const BiciService = {
     },
 
     createBici(data) {
-        console.log(data);
+     
         return api().post("/bici", { 'bici': data });
     },
 

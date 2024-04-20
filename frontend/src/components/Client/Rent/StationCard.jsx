@@ -5,7 +5,7 @@ import stationimg from '../../../assets/img/station1.jpg';
 import IncidenceStationModal from "../Incidents/IncidenceStationModal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function StationCard ({ station }) {
-    // console.log(station.id.img);
+    
     const navigate = useNavigate();
     const [modalStation, setModalStation] = useState(null);
     const [openModal, setOpenModal] = useState(false);

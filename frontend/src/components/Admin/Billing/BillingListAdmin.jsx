@@ -7,20 +7,24 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
 export default function BillingListAdmin({ billing, deletebilling }) {
-    console.log(billing);
+    
+
     const validators = Yup.object().shape({
         pay: Yup.string().required('*Pay is required'),
     });
 
+    const refresh = localStorage.getItem('refresh');
+   
+
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: yupResolver(validators) });
     const payRef = useRef('');
     const send_data = (data) => {
-        // console.log('jla',data);
         localStorage.setItem('pay', data.pay);
-
     };
     const valor = localStorage.getItem('pay');
-
+    const title = localStorage.getItem('title');
+    // const Current_value_of_Pay = <h1>Current value of Pay: {valor}</h1>
+    
     return (
         <div className="billing_list_container">
             <div className="billing_list d-flex align-items-center">
@@ -32,9 +36,12 @@ export default function BillingListAdmin({ billing, deletebilling }) {
                     </div>
                 </div>
             </div>
-
+            <br/>
+            <div className='title'>
+                <label>{title}{valor}</label>
+            </div>
             <br />
-            <h1>Current value of Pay: {valor}</h1>
+            
             <div className='table-responsive'>
                 <table className="table" border="1">
                     <thead className="thead_billing_list">
@@ -55,6 +62,7 @@ export default function BillingListAdmin({ billing, deletebilling }) {
                     </tbody>
                 </table>
             </div>
+            <br/>
             <form className='billing_form ' onSubmit={handleSubmit(send_data)}>
                 <div className='billing'>
                     <div className='img_box '>
@@ -66,6 +74,8 @@ export default function BillingListAdmin({ billing, deletebilling }) {
                     <button type="submit">Submit</button>
                 </div>
             </form>
+            <br/>
+            <br/>
         </div>
     )
 }

@@ -3,9 +3,9 @@ import secrets from '../secrets';
 import JwtService from './JwtService';
 const Axios = () => {
     let api = null;
-    // console.log(JwtService.getToken());
+    
     if (JwtService.getToken()) {
-        // console.log(JwtService);
+        
         api = axios.create({
             baseURL: 'http://localhost:8000/api/',
             // baseURL: secrets.URL_DRF,

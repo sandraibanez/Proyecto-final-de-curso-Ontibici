@@ -2,8 +2,7 @@ import React from 'react';
 // import './slotCardAdmin.scss';
 
 export default function SlotCardAdmin ({ station, slots  }) {
-        console.log("slot cart",slots);
-   
+    
 
     return (
         <tr>

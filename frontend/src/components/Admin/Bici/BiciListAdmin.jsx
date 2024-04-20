@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import BiciCardAdmin from './BiciCardAdmin';
 
 export default function BiciListAdmin({ bici, deleteBici }) {
-    // console.log(bici);
+   
     const navigate = useNavigate();
 
     const redirects = {

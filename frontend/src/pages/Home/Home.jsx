@@ -7,7 +7,7 @@ import SpinnerLoading from "../../components/SpinnerLoading/SpinnerLoading.jsx";
 export default function Home() {
     const { stations } = useStations();
     const [view, stationview] = useState(null);
-    console.log(stations);
+  
     return (
         stations.length === 0 ? <SpinnerLoading />
             : <div className="home_container">

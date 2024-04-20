@@ -16,7 +16,7 @@ export function useIncidents() {
             IncidentsService.getAllIncidentsSlots()
                 .then(({ data }) => {
                     setIncidentsSlotsUser(data);
-                    // console.log( data);
+                    
                 })
         }
     }, [setIncidentsSlotsUser,isAuth])
@@ -26,7 +26,7 @@ export function useIncidents() {
             IncidentsService.getAllIncidentsStation()
                 .then(({ data }) => {
                     setIncidentsStationUser(data);
-                    // console.log( data);
+                  
                 })
         }
     }, [setIncidentsStationUser,isAuth])
@@ -71,7 +71,7 @@ export function useIncidents() {
                         setIncidentsStation([...incidentsStation, data]);
                         setIsCorrect(true);
                         setTimeout(() => { setIsCorrect(false); }, 1000);
-                        console.log(data);
+                        
                     }
                 })
                 .catch(e => console.error(e));

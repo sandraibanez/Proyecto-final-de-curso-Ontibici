@@ -67,9 +67,9 @@ export default function Header() {
                                 <div className="header-container  d-flex flex-column gap-1">
                                     <a onClick={() => redirects.home()} type="button">Home</a>
                                     <a onClick={() => redirects.rent()} type="button">Rent</a>
-                                    <a >{isAdminUser}</a>
-                                    <a>{isUsername}</a>
-                                    <a >{isUser}</a>
+                                    {isAdminUser}
+                                    {isUsername}
+                                    {isUser}
                                 </div>
                             </div>
                         </nav>

@@ -12,7 +12,6 @@ function AuthGuard() {
     // if (!isAuth) {
     //     AuthService.getUser()
     //         .then(({ status }) => {
-    //             console.log(status);
     //             if (status == 200) {
     //                 setTimeout(() => { navigate('/home'); }, 200);
     //             }

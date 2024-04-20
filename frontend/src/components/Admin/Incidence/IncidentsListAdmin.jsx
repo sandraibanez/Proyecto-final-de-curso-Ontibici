@@ -3,7 +3,7 @@ import './IncidentsListAdmin.scss';
 import IncidentsCardAdmin from './IncidentsCardAdmin';
 import IncidentsCardAdminStation from './IncidentsCardAdminStation';
 export default function IncidentsListAdmin({ incidents_slots, deleteIncidenceslot, deleteIncidencestation, incidents_station }) {
-    console.log(incidents_station);
+
     return (
         <div className="incidents_list_container">
             <div className="incidents_list d-flex align-items-center">

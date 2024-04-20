@@ -17,7 +17,7 @@ const IncidentsService = {
 
     // create user
     createSlotIncidence(data) {
-        console.log(data);
+      
         return api().post("/slot_incidence", { 'slot_incidence': data });
     },
 
@@ -26,7 +26,7 @@ const IncidentsService = {
     },
 
     createStationIncidence(data) {
-        console.log(data);
+    
         return api().post("/station_incidence", { 'station_incidence': data });
     },
 

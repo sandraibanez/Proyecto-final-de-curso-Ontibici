@@ -2,7 +2,7 @@ import React from 'react';
 import './RentsCardAdmin.scss';
 
 export default function RentsCardAdmin ({ rent, index, deleteRent }) {
-        console.log(rent);
+     
     const format_data = rent.end_date == null ? 'rented' : rent.end_date;
 
     return (

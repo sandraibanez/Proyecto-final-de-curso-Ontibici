@@ -10,7 +10,7 @@ export function useNotifications() {
         NotificationsService.updateNotificationStatus(id)
             .then(({ data, status }) => {
                 if (status === 200) {
-                    console.log(data);
+                 
                     setNotifications(notifications.filter(item => item.id !== id));
                     // toast.info('Notification seen.');
                 }

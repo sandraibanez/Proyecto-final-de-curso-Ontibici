@@ -7,7 +7,7 @@ const StationService = {
     },
 
     getOneStation(slug) {
-        console.log(slug);
+       
         return api().get(`stations/${slug}`);
     },
 

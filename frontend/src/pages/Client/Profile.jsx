@@ -13,7 +13,7 @@ const Profile = () => {
     const { incidentsSlotsUser } = useIncidents();
     const { incidentsStationsUser } = useIncidents();
     const { userBilling } = useBilling();
-    // console.log(incidentsSlotsUser);
+   
     useEffect(() => {
         useProfile(id);
         if (isCorrect) {

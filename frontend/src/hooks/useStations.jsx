@@ -17,18 +17,18 @@ export function useStations() {
             .then(({ data, status }) => {
                 if (status === 200) {
                     setStationSlots(data);
-                    // console.log(data);
+                    
                 }
             })
             .catch(e => console.error(e));
     }, [oneStation]);
 
     const useOneStation = useCallback((slug) => {
-        console.log(slug);
+     
         StationService.getOneStation(slug)
             .then(({data}) => {
                 setOneStation(data);
-                console.log(data);
+             
             })
             .catch(e => console.error(e));
     }, [oneStation]);

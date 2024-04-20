@@ -7,7 +7,7 @@ const RentService = {
     },
 
     rentBici(slot) {
-        console.log(slot);
+     
         return api().post(`rent/${slot.id}`);
     },
 
@@ -16,7 +16,7 @@ const RentService = {
     },
 
     bringBackBici(slot) {
-        console.log(slot);
+       
         return api().post("bringbackBicis", { "bici": { "end_slot": slot.id, "bici_id": slot.bici_id } });
     },
 

@@ -3,24 +3,24 @@ import api from "./api"
 const BillingService = {
     // admin
     getAllAdminBilling() {
-        console.log('hola');
+       
         return api().get("/billingall");
     },
     payadmin(value){
-        console.log(value);
+       
         return api().post("billing_pay",{'billing_pay':value});
     },
     getOneBilling(id) {
-        console.log(id);
+       
         return api().get(`billing/${id}`);
     },
     updateBilling(id, data) {
-        console.log(data);
+        
         return api().put(`billing_update/${id}`,{'billing':data});
     },
 
     deleteBilling(id) {
-        console.log(id);
+       
         return api().delete(`billingdelete/${id}`);
     },
 
@@ -38,7 +38,7 @@ const BillingService = {
             rent_id: data,
             pay: pay_id
         }
-         console.log(value);
+       
         return api().post("/billing_create", { 'billing_create':value});
     },
 

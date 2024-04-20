@@ -26,7 +26,6 @@ const BiciForm = ({bici= {slug: '', name: '', status: ''}, form_type, sendData})
 
     const send_data = data => {
         sendData(data);
-        // console.log(data);
     };
 
     const redirects = {

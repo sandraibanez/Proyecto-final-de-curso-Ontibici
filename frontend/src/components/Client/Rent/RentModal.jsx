@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext,useState } from "react";
 import Modal from 'react-modal';
 import './RentModal.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +19,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
     const { isAuth } = useContext(AuthContext);
     const { isCorrect, useRentBici, useBringBackBici } = useRent();
     const {useAddBilling} = useBilling();
+    const [refresh, useRefresh] =useState(false);
     let status_type = '';
 
     const customStyles = {
@@ -53,11 +54,15 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
             console.log('login');
         }
     }
-
+    const refreshBilling = ()=>{
+        useRefresh(!refresh);
+    }
     useEffect(() => {
         if (isCorrect) {
             navigate('/profile/'+ user.id);
+            localStorage.setItem('refreshProfile',refresh);
         }
+
     }, [isCorrect, navigate]);
 
     return (
@@ -69,7 +74,7 @@ export default function RentModal ({ openModalRent, setOpenModalRent, rent }) {
                     </button>
                     {status_type}
                     <div className='buttons_box'>
-                        <button type="button" className="btn btn-primary" onClick={() => { rent_bici() }}>Accept</button>
+                        <button type="button" className="btn btn-primary" onClick={() => { rent_bici(), refreshBilling() }}>Accept</button>
                         <button type="button" className="btn btn-danger" onClick={() => handleClose()}>Cancel</button>
                     </div>
                 </div>

@@ -5,12 +5,12 @@ const Context = React.createContext({})
 
 export function BiciContextProvider({ children }) {
     const [bici, setBici] = useState([]);
-        // console.log(bici);
+      
     useEffect(function () {
         BiciService.getAllBici()
             .then(({data}) => {
                 setBici(data);
-                // console.log(data);
+              
             })
             .catch(e => console.error(e));
     }, [setBici]);

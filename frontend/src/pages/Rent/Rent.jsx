@@ -5,7 +5,7 @@ import StationsList from "../../components/Client/Rent/StationsList.jsx";
 export default function Rent() {
     
     const {stations} = useStations();
-    console.log('rent',stations);
+
     return (
         <div className="rent_container">
             <div className="rent d-flex align-items-center">

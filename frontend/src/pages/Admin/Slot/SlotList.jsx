@@ -6,7 +6,7 @@ import SlotListAdmin from "../../../components/Admin/slot/slotListAdmin";
 const SlotList = () => {
 
     const {stations} = useStations();
-        console.log("slotList",stations);
+        
     return (
         // <h1>hola</h1>
         <SlotListAdmin stations={stations}/>

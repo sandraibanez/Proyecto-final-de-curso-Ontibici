@@ -27,7 +27,7 @@ export function useAuth() {
     const useRegister = useCallback((data) => {
         AuthService.Register(data)
             .then(({ data, status }) => {
-                console.log(data);
+             
                 if (status == 200) {
                     JwtService.saveToken(data.token);
                     // JwtService.saveRefreshToken(data.ref_token);
@@ -51,7 +51,7 @@ export function useAuth() {
     const useLogin = useCallback((data) => {
         AuthService.Login(data)
             .then(({ data, status }) => {
-                // console.log(data.token);
+               
                 if (status === 200) {
                     JwtService.saveToken(data.token);
                     JwtService.saveRefreshToken(data.ref_token);
@@ -98,7 +98,7 @@ export function useAuth() {
 
         AuthService.updateProfile(id, user_data, profile_data)
             .then(({ data, status }) => {
-                console.log(data);
+              
                 if (status === 200) {
                     JwtService.saveToken(data.token);
                     JwtService.saveRefreshToken(data.ref_token);

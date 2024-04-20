@@ -1,22 +1,24 @@
 import React from "react";
 import './Footer.css';
 import stationimg from '../../assets/img/Logo.jpg';
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const redirects = {
+    rent: () => navigate('/rent'),
+  }
   return (
     <footer id="footer" className="footer">
-
       <div className="container">
         <div className="row gy-4">
           <div className=" col-md-12 footer-info">
-            <a href="index.html" className="logo d-flex align-items-center">
-              <span>
-                <img src={stationimg} alt="logo" />
-              </span>
+
+            <a className="logo align-items-center" onClick={() => redirects.rent()}>
+              <img src={stationimg} alt="logo" />
             </a>
-            
             <div className="container_contact">
-            <h2>Contact Us</h2><br />
+              <h2>Contact Us</h2><br />
               <div className="contact">
                 <div className="contact_info">
                   <div>
@@ -34,7 +36,7 @@ export default function Footer() {
                   </div>
                   <div className="email">
                     <p>
-                      <strong>Email:</strong> <br/> Ontibici@email.com<br />
+                      <strong>Email:</strong> <br /> Ontibici@email.com<br />
                     </p>
                   </div>
                 </div>

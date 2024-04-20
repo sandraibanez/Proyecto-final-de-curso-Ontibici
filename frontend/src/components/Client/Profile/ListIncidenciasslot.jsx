@@ -2,7 +2,7 @@ import React from 'react';
 // import './ListIncidencias.scss';
 
 export default function ListIncidenciasslot ({ incidence }) {
-    // console.log(incidence);
+  
     return  (
         <tr>
             <td className="id_col">{incidence.id}</td>

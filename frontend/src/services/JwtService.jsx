@@ -6,7 +6,7 @@ const JWTService = {
         return localStorage.getItem("ref_token")
     },
     saveToken(token){
-        // console.log(token);
+       
         localStorage.setItem("token", token)
     },
     saveRefreshToken(ref_token){

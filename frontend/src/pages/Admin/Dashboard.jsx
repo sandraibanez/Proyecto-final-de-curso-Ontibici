@@ -14,7 +14,8 @@ const Dashboard = () => {
         icidents: () => navigate('/dashboard/incidents'),
         billing: () => navigate('/dashboard/billing'),
     }
-
+    localStorage.setItem('title', 'Current value of Pay:');
+    localStorage.setItem('refreshProfile', false);
     return (
         <div className="dashboard_container">
             <div className="dashboard d-flex align-items-center">

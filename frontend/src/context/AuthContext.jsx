@@ -19,7 +19,7 @@ export function AuthContextProvider({ children }) {
     // JwtService.destroyToken();
     // JwtService.destroyRefreshToken();
         if (token) {
-            // console.log(token);
+          
             AuthService.getUser()
                 .then(({ data, status }) => {
                     if (status === 200) {
@@ -30,7 +30,7 @@ export function AuthContextProvider({ children }) {
                     }
                 })
                 .catch(({ error }) => {
-                    // console.log('hola refresh');
+                   
                     if (JwtService.getRefreshToken()) {
                         refresh_token();
                     } else {

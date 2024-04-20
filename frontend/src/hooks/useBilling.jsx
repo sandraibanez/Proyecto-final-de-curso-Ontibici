@@ -9,14 +9,19 @@ export function useBilling() {
     const [oneBilling, setOneBilling] = useState({});
     const {billing, setbilling} = useContext(BillingContext);
     const [isCorrect, setIsCorrect] = useState(false);
-    console.log(billing);
-  
+    const [localBillingData, setLocalBillingData] = useState([]);
+    const valor = localStorage.getItem('refreshProfile');
+
+    useEffect(() => {
+        setLocalBillingData(billing);
+    }, [billing]);
+    
     const useOneBilling = useCallback((id) => {
-        console.log(id);
+      
         BillingService.getOneBilling(id)
             .then(({data}) => {
                 setOneBilling(data);
-                console.log(data);
+               
             })
             .catch(e => console.error(e));
     }, [oneBilling]);
@@ -25,21 +30,27 @@ export function useBilling() {
             BillingService.getBilling()
                 .then(({ data }) => {
                     setUserBilling(data);
-                    // console.log( data);
                 })
         }
     }, [setUserBilling,isAuth])
+    useEffect(function () {
+        if (isAuth) {
+            BillingService.getBilling()
+                .then(({ data }) => {
+                    setUserBilling(data);
+                })
+        }
+    }, [valor])
     
     const useAddBilling = useCallback((data) => {
-        console.log(data);
+      
         if (isAuth) {
             BillingService.createBilling(data)
                 .then(({ data, status }) => {
-                    console.log(data);
+                  
                     if (status === 200) {
                         setUserBilling([...userBilling, data]);
                         // setPay(newPay);
-                        console.log(data);
                         setIsCorrect(true);
                         setTimeout(() => { setIsCorrect(false); }, 1000);
                     }
@@ -73,7 +84,7 @@ export function useBilling() {
     
 
     const useDeletebilling = (type, id) => {
-        // console.log(id);
+       
         if (isAuth) {
             BillingService.deleteBilling(id)
                 .then(({ data, status }) => {
@@ -90,5 +101,5 @@ export function useBilling() {
 
     
    
-    return { isCorrect,billing,setbilling,oneBilling,useOneBilling,setOneBilling,useAddBilling, useUpdateBilling,useDeletebilling,userBilling,setUserBilling};  
+    return { isCorrect,setbilling,billing,oneBilling,useOneBilling,setOneBilling,useAddBilling, useUpdateBilling,useDeletebilling,userBilling,setUserBilling};  
 }

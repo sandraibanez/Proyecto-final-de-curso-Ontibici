@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './StationsCardAdmin.scss';
 
 export default function StationsCardAdmin ({ station, index, deleteStation }) {
-    console.log(index, station);
+    
     const navigate = useNavigate();
 
     const redirects = {

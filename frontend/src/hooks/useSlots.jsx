@@ -10,7 +10,7 @@ export function useSlots() {
         SlotService.getOne(id).
             then(({ data }) => {
                 setOneSlot(data)
-                // console.log(data);
+               
             })
             .catch(e => console.error(e));
     }, []);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,7 +6,8 @@ import * as Yup from 'yup';
 import './BillingFrom.scss';
 const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form_type, sendData}) => {
     const navigate = useNavigate();
-    // console.log(billing);
+    const [refresh, useRefresh] =useState(false);
+    
     const validators = Yup.object().shape({
         rent_id: Yup.string().required('*Rent_id is required'),
         user_id: Yup.string().required('*User_id is required'),
@@ -35,7 +36,11 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
 
     const button_type = form_type == 'create' ? 'Create' : 'Update';
     const read_only = form_type == 'update' ? true : false;
-
+    const refreshBilling = ()=>{
+        useRefresh(!refresh);
+    }
+    localStorage.setItem('refresh',refresh);
+    localStorage.setItem('title', 'Current value of Pay:');
     return (
         <form className='billing_form' onSubmit={handleSubmit(send_data)}>
             <div className='rent_billing'>
@@ -55,7 +60,7 @@ const BillingForm = ({billing= {id: '', rent_id: '', user_id: '', pay: ''}, form
                 <span className="error">{errors.pay?.message}</span>
             </div>
             <div className='buttons_box'>
-                <button type="submit" className="btn btn-primary">{button_type}</button>
+                <button type="submit" className="btn btn-primary"  onClick={() => refreshBilling()}>{button_type}</button>
                 <button type="button" className="btn btn-danger" onClick={() => redirects.billing()}>Cancel</button>
             </div>
         </form>
